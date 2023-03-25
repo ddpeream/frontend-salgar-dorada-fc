@@ -20,6 +20,8 @@ export const Image = styled.img`
   width: 100px;
   margin-bottom: 48px;
   justify-self: center;
+  box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.5);
+  border-radius: 25%;
 `;
 
 export const ContainerForm = styled.div`
@@ -82,7 +84,6 @@ export const SendBoton = styled.input`
 `;
 
 export const SingUpButton = styled.button`
-  margin-top: -35px;
   background-color: #ffffff;
   border-radius: 8px;
   border: 1px solid #acd9b2;

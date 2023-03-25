@@ -32,6 +32,13 @@ export const Login = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("logueo: form", credentials);
+
+    // Validación de campos requeridos
+    if (!credentials.username || !credentials.password) {
+      setError("Por favor ingresa tu email y contraseña");
+      return;
+    }
+
     const result = await loginUser(credentials);
     if (result) {
       navigate("/home");
@@ -39,20 +46,20 @@ export const Login = () => {
       setError("Nombre de usuario o contraseña incorrectos");
     }
   };
-  const ruta_de_la_imagen = "../../assets/escudo-sd.jpg";
-  console.log("IMAGEN: ", ruta_de_la_imagen);
   return (
     <Container>
       <ContainerForm>
         <Image src={escudo} />
 
         <Form onSubmit={handleSubmit}>
-          <Label>Email addres</Label>
+          <Label>Email address</Label>
           <Input
             onChange={handleInputChange}
             type="text"
             name="username"
             placeholder="example@gmail.com"
+            required // Agrega la propiedad required para validar que se ingrese un valor
+            autoComplete="email" 
           />
 
           <Label>Password</Label>
@@ -61,11 +68,13 @@ export const Login = () => {
             type="password"
             name="password"
             placeholder="********"
+            required // Agrega la propiedad required para validar que se ingrese un valor
+            autoComplete="current-password" 
           />
 
-          <SendBoton type="submit" value="Log in" />
+          {error && <p>{error}</p> /* Mostrar mensaje de error si hay un error */}
 
-          <a href="/">Forgot my password</a>
+          <SendBoton type="submit" value="Log in" />
         </Form>
 
         <SingUpButton>Sign up</SingUpButton>
@@ -73,3 +82,4 @@ export const Login = () => {
     </Container>
   );
 };
+
