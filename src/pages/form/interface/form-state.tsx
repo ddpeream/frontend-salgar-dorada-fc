@@ -1,13 +1,10 @@
 export interface FormState {
   nombre: string;
   apellido: string;
-  email: string;
-  telefono: number | null;
-  celular: number | null;
-  documento_identidad: {
-    tipo: string;
-    No: number | null;
-  };
+  telefono: string;
+  celular: string;
+  tipo: string;
+  No: string;
   fecha_nacimiento: Date;
   direccion: string;
 }

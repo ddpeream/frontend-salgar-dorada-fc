@@ -1,4 +1,6 @@
+import { TextField } from "@mui/material";
 import styled from "styled-components";
+import { StyledTextFieldProps } from "./interface/style-field-props";
 
 export const FormContainer = styled.div`
   width: 100%;
@@ -9,8 +11,16 @@ export const FormContainer = styled.div`
   align-items: center;
 `;
 
+export const Image = styled.img`
+  width: 40px;
+  height: 45px;
+  justify-self: center;
+  box-shadow: 0px 4px 4px hsla(0, 0%, 0%, 0.25);
+  border-radius: 25%;
+`;
+
 export const Form = styled.form`
-  width: 70%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -23,7 +33,33 @@ export const FormCard = styled.div`
   background: white;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h4`
   text-align: center;
 `;
+
+export const StyledTextField = styled(({ isSelected, fileName, ...other }: StyledTextFieldProps) => (
+  <TextField {...other} />
+))<StyledTextFieldProps>`
+  .MuiInputBase-root:before {
+    content: ${(props) =>
+      props.isSelected ? props.fileName: "'Seleccione una imagen'"};
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  & input[type="file"] {
+    opacity: 0;
+    cursor: pointer;
+  }
+`;
+
+
+
+
+
 
