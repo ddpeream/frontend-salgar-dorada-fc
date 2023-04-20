@@ -11,8 +11,10 @@ import {
   Input,
   SendBoton,
   SingUpButton,
+  Error,
 } from "./login.styles";
 import escudo from "../../assets/escudo-sd.jpg";
+import axios, { AxiosError } from "axios";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -32,20 +34,24 @@ export const Login = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("logueo: form", credentials);
-
+  
     // Validación de campos requeridos
     if (!credentials.username || !credentials.password) {
       setError("Por favor ingresa tu email y contraseña");
       return;
     }
-
-    const result = await loginUser(credentials);
-    if (result) {
-      navigate("/home");
-    } else {
-      setError("Nombre de usuario o contraseña incorrectos");
+  
+    try {
+      const result = await loginUser(credentials);
+      console.log('Result', result)
+      if (result)navigate("/form");
+    } catch (error) {
+        console.log(error);
+        setError(`${error}`);
     }
   };
+  
+
   return (
     <Container>
       <ContainerForm>
@@ -58,7 +64,7 @@ export const Login = () => {
             type="text"
             name="username"
             placeholder="example@gmail.com"
-            required // Agrega la propiedad required para validar que se ingrese un valor
+            required
             autoComplete="email" 
           />
 
@@ -68,11 +74,11 @@ export const Login = () => {
             type="password"
             name="password"
             placeholder="********"
-            required // Agrega la propiedad required para validar que se ingrese un valor
+            required
             autoComplete="current-password" 
           />
 
-          {error && <p>{error}</p> /* Mostrar mensaje de error si hay un error */}
+          {error && <Error>{error}</Error>}
 
           <SendBoton type="submit" value="Log in" />
         </Form>
@@ -82,4 +88,3 @@ export const Login = () => {
     </Container>
   );
 };
-

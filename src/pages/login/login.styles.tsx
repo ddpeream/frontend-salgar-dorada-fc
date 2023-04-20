@@ -94,3 +94,7 @@ export const SingUpButton = styled.button`
   font-weight: bold;
   height: 50px;
 `;
+
+export const Error = styled.p`
+  color: red;
+`

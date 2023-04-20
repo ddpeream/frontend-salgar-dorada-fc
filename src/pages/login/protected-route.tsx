@@ -1,9 +1,10 @@
 import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, ...rest }: any) => {
-  const authenticated = JSON.parse(localStorage.LOGIN);
-  console.log('is loguer', !authenticated, authenticated, !!authenticated)
-  if (!authenticated?.trimStart()) {
+  const loginData = localStorage.getItem('LOGIN');
+  const token = loginData ? JSON.parse(loginData) : null;
+  if (!token) {
+    console.log('Entro Login')
     return <Navigate to="/login" />;
   }
   return <Component {...rest} />;
