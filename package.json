@@ -1,6 +1,7 @@
 {
   "name": "frontend-salgar-dorada-fc",
   "version": "0.1.0",
+  "homepage": "https://dedapemo.github.io/frontend-salgar-dorada-fc",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
