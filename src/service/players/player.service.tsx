@@ -19,7 +19,7 @@ const getAxiosConfig = () => {
 export const createPlayer = async (
   player: formCreatedDto
 ): Promise<AxiosResponse<formCreatedDto>> => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
   const config = getAxiosConfig();
   try {
     console.log("Body", player);
@@ -40,7 +40,7 @@ export const createPlayer = async (
 };
 
 export const getPlayers = async (): Promise<formCreatedDto[]> => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
   const config = getAxiosConfig();
   try {
     const response = await axios.get(`http://${BASE_URL}/players`, config);
