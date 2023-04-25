@@ -1,4 +1,7 @@
 export  interface formCreatedDto {
+
+    _id?: string;
+    
     nombre: string;
 
     apellido: string;

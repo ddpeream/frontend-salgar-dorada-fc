@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Formik, Field, ErrorMessage } from "formik";
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { Button, FormControl, Grid, TextField } from "@mui/material";
 import { FormContainer, Image, Title, Form, Error } from "./form.style";
 import { FormState } from "./interface/form-state";
@@ -7,41 +8,66 @@ import escudo from "../../assets/escudo-sd.jpg";
 import { createPlayer } from "../../service/players/player.service";
 
 export const FormPlayer: React.FC = () => {
-  const [formState, setFormState] = useState<FormState>({
-    nombre: "",
-    apellido: "",
-    tipo: "",
-    No: "",
-    direccion: "",
-    fecha_nacimiento: new Date(),
-    celular: "",
-    telefono: "",
+  const [errorForm, setErrorForm] = React.useState<Error[]>([]);
+
+  const validationSchema = Yup.object({
+    nombre: Yup.string()
+      .max(50, "Debe tener 50 caracteres o menos")
+      .required("El campo nombre es requerido"),
+    apellido: Yup.string()
+      .max(50, "Debe tener 50 caracteres o menos")
+      .required("El campo apellido es requerido"),
+    direccion: Yup.string()
+      .max(100, "Debe tener 100 caracteres o menos")
+      .required("El campo direccion es requerido"),
+    tipo: Yup.string()
+      .max(50, "Debe tener 50 caracteres o menos")
+      .required("El campo tipo es requerido"),
+    No: Yup.number()
+      .typeError("Debe ser un número")
+      .required("El campo No es requerido"),
+    fecha_nacimiento: Yup.date()
+      .typeError("Debe ser una fecha válida")
+      .required("El campo fecha_nacimiento es requerido"),
+    celular: Yup.number()
+      .typeError("Debe ser un número")
+      .required("El campo celular es requerido"),
+    telefono: Yup.number()
+      .typeError("Debe ser un número")
+      .required("El campo telefono es requerido"),
   });
-  const [errorForm, setErrorForm] = useState<Error[]>([]);
 
-  const { nombre, apellido, telefono, celular, direccion, tipo, No } = formState;
+  const formik = useFormik({
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      tipo: "",
+      No: "",
+      direccion: "",
+      fecha_nacimiento: new Date(),
+      celular: "",
+      telefono: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (values: FormState) => {
+      try {
+        console.log("Formulario Enviado", values);
+        const formCreated = await createPlayer(values);
+        console.log("handle:", formCreated);
+        if(formCreated.status === 201){
+          formik.resetForm();
+        }
+      } catch (error: any) {
+        console.log("Error desde el formulario 1", error);
+        setErrorForm(error.message);
+        console.log("Error desde el formulario 2", errorForm);
+      }
+    },
+  });
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    try {
-      const formCreated = await createPlayer(formState);
-      console.log("handle:", formState);
-    } catch (error: any) {
-      console.log("Error desde el formulario 1", error);
-      setErrorForm(error.message);
-      console.log("Error desde el formulario 2", errorForm);
-    }
-  };
+  const { handleSubmit, errors, touched } = formik;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormState((prevState) => ({ ...prevState, [name]: value }));
-    console.log("Retorno del formulario:", formState);
-  };
-
-  console.log("Error desde el formulario 2", errorForm);
   return (
-    // <Formik initialValues={formState} onSubmit={handleChange}>
     <FormContainer>
       <Form onSubmit={handleSubmit}>
         <Grid
@@ -58,50 +84,58 @@ export const FormPlayer: React.FC = () => {
           <Grid container spacing={2} justifyContent="space-around">
             <Grid item xs={6}>
               <TextField
-                fullWidth={true}
-                name="nombre"
+                id="nombre"
+                type="text"
                 label="Nombre"
-                value={nombre}
-                onChange={handleChange}
+                {...formik.getFieldProps("nombre")}
+                error={touched.nombre && Boolean(errors.nombre)}
+                helperText={touched.nombre && errors.nombre}
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth={true}
-                name="apellido"
                 label="Apellido"
-                value={apellido}
-                onChange={handleChange}
+                id="apellido"
+                type="text"
+                {...formik.getFieldProps("apellido")}
+                error={touched.apellido && Boolean(errors.apellido)}
+                helperText={touched.apellido && errors.apellido}
               />
             </Grid>
           </Grid>
         </FormControl>
         <FormControl>
           <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <TextField
-              name="direccion"
-              label="direccion"
-              value={direccion}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={2}>
-            <TextField
-              name="tipo"
-              label="tipo"
-              value={tipo}
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <TextField
-              name="No"
-              label="No"
-              value={No}
-              onChange={handleChange}
-            />
-          </Grid>
+            <Grid item xs={6}>
+              <TextField
+                id="direccion"
+                label="Direccion"
+                type="text"
+                {...formik.getFieldProps("direccion")}
+                error={touched.direccion && Boolean(errors.direccion)}
+                helperText={touched.direccion && errors.direccion}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <TextField
+                id="tipo"
+                label="Tipo"
+                type="text"
+                {...formik.getFieldProps("tipo")}
+                error={touched.tipo && Boolean(errors.tipo)}
+                helperText={touched.tipo && errors.tipo}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                id="No"
+                label="No"
+                type="text"
+                {...formik.getFieldProps("No")}
+                error={touched.No && Boolean(errors.No)}
+                helperText={touched.No && errors.No}
+              />
+            </Grid>
           </Grid>
         </FormControl>
         <FormControl style={{ display: "flex", flexDirection: "column" }}>
@@ -110,35 +144,50 @@ export const FormPlayer: React.FC = () => {
               <TextField
                 type={"tel"}
                 fullWidth={true}
-                name="telefono"
+                id="telefono"
                 label="Teléfono"
-                value={telefono}
-                onChange={handleChange}
+                {...formik.getFieldProps("telefono")}
+                error={touched.telefono && Boolean(errors.telefono)}
+                helperText={touched.telefono && errors.telefono}
               />
             </Grid>
             <Grid item xs={4}>
               <TextField
                 type={"tel"}
                 fullWidth={true}
-                name="celular"
-                label="celular"
-                value={celular}
-                onChange={handleChange}
+                id="celular"
+                label="Celular"
+                {...formik.getFieldProps("celular")}
+                error={touched.celular && Boolean(errors.celular)}
+                helperText={touched.celular && errors.celular}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                type={"Date"}
+                fullWidth={true}
+                id="fecha_nacimiento"
+                label="Fecha de nacimiento"
+                {...formik.getFieldProps("fecha_nacimiento")}
+                error={
+                  touched.fecha_nacimiento && Boolean(errors.fecha_nacimiento)
+                }
+                helperText={
+                  touched.fecha_nacimiento && String(errors.fecha_nacimiento)
+                }
               />
             </Grid>
           </Grid>
         </FormControl>
-        {errorForm.length > 0
-          ? errorForm.map((err) => {
-              console.log("cada error que sale", err);
-              return (<Error key={err.toString()} >{err.toString()}</Error>);
-            })
-          : null}
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={!formik.isValid}
+        >
           Crear Jugador
         </Button>
       </Form>
     </FormContainer>
-    // </Formik>
   );
 };

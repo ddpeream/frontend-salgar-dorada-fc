@@ -1,5 +1,5 @@
 import { formCreatedDto } from "./player.interfase";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 const getAxiosConfig = () => {
   const loginData = localStorage.getItem("LOGIN");
@@ -18,32 +18,32 @@ const getAxiosConfig = () => {
 
 export const createPlayer = async (
   player: formCreatedDto
-): Promise<formCreatedDto> => {
+): Promise<AxiosResponse<formCreatedDto>> => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const config = getAxiosConfig();
   try {
     console.log("Body", player);
     const response = await axios.post(
-      `https://${BASE_URL}/players`,
+      `http://${BASE_URL}/players`,
       player,
       config
     );
     console.log("La respuesta de crear", response);
+    return response;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
-      console.log('error al crear', error.response?.data);
+      console.log('error al crear', error);
       throw error.response?.data;
     }
     throw error;
   }
-  return player;
 };
 
 export const getPlayers = async (): Promise<formCreatedDto[]> => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const config = getAxiosConfig();
   try {
-    const response = await axios.get(`https://${BASE_URL}/players`, config);
+    const response = await axios.get(`http://${BASE_URL}/players`, config);
     console.log("response", response.data);
     return response.data;
   } catch (error) {

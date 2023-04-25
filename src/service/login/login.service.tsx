@@ -3,7 +3,7 @@ import axios from 'axios';
 import logger from "./logger";
 
 export const loginUser = async (credentials: Credentials): Promise<boolean> => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
   const config = {
     headers: {
       "Access-Control-Allow-Origin": "*",
