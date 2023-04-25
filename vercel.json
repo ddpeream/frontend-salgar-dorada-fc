@@ -1,15 +1,15 @@
 {
-    "version": 2,
     "builds": [
-      { "src": "package.json", "use": "@vercel/node" }
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
-    ],
-    "env": {},
-    "build": {
-      "command": "npm run build",
-      "output": "build"
-    }
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
   }
   
