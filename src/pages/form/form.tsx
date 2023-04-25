@@ -57,7 +57,7 @@ export const FormPlayer: React.FC = () => {
         if(formCreated.status === 201){
           const { nombre, apellido, No } = formCreated?.data
           formik.resetForm();
-          alert(`El jugador <strong>${nombre} ${apellido}</strong> con la cedula <strong>${No}</strong> ha sido creado exitosamente`)
+          alert(`El jugador ${nombre} ${apellido} con la cedula ${No} ha sido creado exitosamente`)
         }
       } catch (error: any) {
         console.log("Error desde el formulario 1", error);
