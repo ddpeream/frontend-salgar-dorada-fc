@@ -24,7 +24,7 @@ export const createPlayer = async (
   try {
     console.log("Body", player);
     const response = await axios.post(
-      `http://${BASE_URL}/players`,
+      `https://${BASE_URL}/players`,
       player,
       config
     );
@@ -43,7 +43,7 @@ export const getPlayers = async (): Promise<formCreatedDto[]> => {
   const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
   const config = getAxiosConfig();
   try {
-    const response = await axios.get(`http://${BASE_URL}/players`, config);
+    const response = await axios.get(`https://${BASE_URL}/players`, config);
     console.log("response", response.data);
     return response.data;
   } catch (error) {

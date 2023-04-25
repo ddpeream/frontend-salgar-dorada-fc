@@ -16,6 +16,14 @@ const PlayerList = () => {
     loadPlayers();
   }, []);
 
+  const filteredPlayers = players.filter(
+    (player) =>
+      player.nombre.toLowerCase().includes(searchText.toLowerCase()) ||
+      player.apellido.toLowerCase().includes(searchText.toLowerCase()) ||
+      player.No.toLowerCase().includes(searchText.toLowerCase()) ||
+      player.celular.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div style={{ width: "100%" }}>
@@ -35,47 +43,44 @@ const PlayerList = () => {
         <Grid
           container
           spacing={2}
-          sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+          sx={{
+            width: "70%",
+            margin: "auto",
+            mt: "1rem",
+            mb: "1rem",
+            pb: "1rem",
+            borderBottom: "1px solid #ccc",
+          }}
         >
-          {players
-            .filter(
-              (player) =>
-                player.nombre
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase()) ||
-                player.apellido
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase()) ||
-                player.No.toLowerCase().includes(searchText.toLowerCase()) ||
-                player.celular.toLowerCase().includes(searchText.toLowerCase())
-            )
-            .map((player) => (
-              <Grid
-                key={player._id}
-                item
-                xs={12}
-                sx={{ width: "70%", height: "50vh" }}
+          <Grid item xs={12}>
+            <strong>Número de jugadores: {filteredPlayers.length}</strong>
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={2} sx={{ width: "70%", margin: "auto" }}>
+          {filteredPlayers.map((player) => (
+            <Grid key={player._id} item xs={12}>
+              <div
+                style={{
+                  border: "1px solid black",
+                  padding: "1rem",
+                  height: "100%",
+                }}
               >
-                <div
-                  style={{
-                    border: "1px solid black",
-                    padding: "1rem",
-                    height: "100%",
-                  }}
-                >
-                  <h3>
-                    {player.nombre} {player.apellido}
-                  </h3>
-                  <p>No: {player.No}</p>
-                  <p>Celular: {player.celular}</p>
-                  <p>Direccion: {player.direccion}</p>
-                </div>
-              </Grid>
-            ))}
+                <h3>
+                  {player.nombre} {player.apellido}
+                </h3>
+                <p>No: {player.No}</p>
+                <p>Celular: {player.celular}</p>
+                <p>Dirección: {player.direccion}</p>
+              </div>
+            </Grid>
+          ))}
         </Grid>
       </div>
     </div>
   );
 };
+
 
 export default PlayerList;
