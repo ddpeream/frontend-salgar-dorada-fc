@@ -19,20 +19,20 @@ const getAxiosConfig = () => {
 export const createPlayer = async (
   player: formCreatedDto
 ): Promise<AxiosResponse<formCreatedDto>> => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const config = getAxiosConfig();
   try {
-    console.log("Body", player);
+    // console.log("Body", player);
     const response = await axios.post(
-      `https://${BASE_URL}/players`,
+      `http://${BASE_URL}/players`,
       player,
       config
     );
-    console.log("La respuesta de crear", response);
+    // console.log("La respuesta de crear", response);
     return response;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
-      console.log('error al crear', error);
+      // console.log('error al crear', error);
       throw error.response?.data;
     }
     throw error;
@@ -40,14 +40,29 @@ export const createPlayer = async (
 };
 
 export const getPlayers = async (): Promise<formCreatedDto[]> => {
-  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const config = getAxiosConfig();
   try {
-    const response = await axios.get(`https://${BASE_URL}/players`, config);
-    console.log("response", response.data);
+    const response = await axios.get(`http://${BASE_URL}/players`, config);
+    // console.log("response", response.data);
     return response.data;
   } catch (error) {
-    console.error("Error al obtener jugadores:", error);
+    // console.error("Error al obtener jugadores:", error);
     throw new Error("Error al obtener jugadores");
   }
 };
+
+export const getPlayerById = async (playerId: string): Promise<formCreatedDto> => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL_PRO;
+  const config = getAxiosConfig();
+  try {
+    console.log("response pre id", playerId);
+    const response = await axios.get(`https://${BASE_URL}/players/${playerId}`, config);
+    console.log("response", response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error al obtener el jugador con id ${playerId}:`, error);
+    throw new Error(`Error al obtener el jugador con id ${playerId}`);
+  }
+};
+
