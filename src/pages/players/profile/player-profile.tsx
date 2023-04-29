@@ -8,7 +8,7 @@ import {
   Typography,
   createStyles,
 } from "@mui/material";
-import { getPlayerById } from "../../service/players/player.service";
+import { getPlayerById } from "../../../service/players/player.service";
 
 const PlayerProfile = () => {
   const [player, setPlayer] = useState<any>(null);

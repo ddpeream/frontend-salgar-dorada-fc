@@ -3,8 +3,8 @@ import ProtectedRoute from './pages/login/protected-route';
 import { Home } from './pages/home/home';
 import { FormPlayer } from './pages/form/form';
 import { Login } from './pages/login/login';
-import PlayerProfile from './pages/players/player-profile';
-import PlayerList from './pages/players/players';
+import PlayerProfile from './pages/players/profile/player-profile';
+import PlayerList from './pages/players/list/players';
 
 function App() {
   return (
