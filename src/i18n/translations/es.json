@@ -117,7 +117,27 @@
     "documentType": "Tipo de Documento",
     "documentNumber": "Número de Documento",
     "emergencyContact": "Contacto de Emergencia",
-    "back": "Volver"
+    "back": "Volver",
+    "pageEyebrow": "Plantilla 2025 · Salgar Dorada FC",
+    "pageTitle": "Talento que vibra con cada minuto de juego.",
+    "pageSubtitle": "Descubre a los protagonistas de nuestro club: jóvenes que combinan disciplina, energía y una visión ofensiva que contagia a la hinchada.",
+    "searchPlaceholder": "Buscar jugador por nombre o dorsal",
+    "searchAriaLabel": "Buscar jugador por nombre o número",
+    "playerSingular": "jugador",
+    "playerPlural": "jugadores", 
+    "searchMatches": "Coincidencias con \"{{query}}\"",
+    "exploreAll": "Explora toda la plantilla",
+    "noMatches": "No encontramos coincidencias",
+    "adjustSearch": "Ajusta tu búsqueda o descubre otra posición dentro de la plantilla.",
+    "loading": "Cargando...",
+    "profileLabels": {
+      "number": "No:",
+      "mobile": "Celular:",
+      "address": "Dirección:",
+      "birthDate": "Fecha de nacimiento:",
+      "phone": "Teléfono:",
+      "nickname": "Identificador"      
+    }
   },
   "matches": {
     "title": "Partidos",

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { useAppTranslation } from "../../../i18n/hooks";
 import { Search } from "../component/search";
 import {
   PlayersWrapper,
@@ -142,6 +143,7 @@ const normalizeText = (value: string) =>
     .replace(/[\u0300-\u036f]/g, "");
 
 const PlayerList: React.FC = () => {
+  const { t } = useAppTranslation();
   const [searchText, setSearchText] = useState("");
   const location = useLocation();
   const wrapperRef = useRef<HTMLElement | null>(null);
@@ -197,10 +199,10 @@ const PlayerList: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <BackButton fallbackPath="/" />
-          <PageEyebrow>Plantilla 2025 · Salgar Dorada FC</PageEyebrow>
-          <PageTitle>Talento que vibra con cada minuto de juego.</PageTitle>
+          <PageEyebrow>{t("players.pageEyebrow")}</PageEyebrow>
+          <PageTitle>{t("players.pageTitle")}</PageTitle>
           <PageSubtitle>
-            Descubre a los protagonistas de nuestro club: jóvenes que combinan disciplina, energía y una visión ofensiva que contagia a la hinchada.
+            {t("players.pageSubtitle")}
           </PageSubtitle>
         </HeaderSection>
 
@@ -222,9 +224,9 @@ const PlayerList: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <EmptyTitle>No encontramos coincidencias</EmptyTitle>
+            <EmptyTitle>{t("players.emptyState.title", "No encontramos coincidencias")}</EmptyTitle>
             <EmptySubtitle>
-              Ajusta tu búsqueda o descubre otra posición dentro de la plantilla.
+              {t("players.emptyState.subtitle", "Ajusta tu búsqueda o descubre otra posición dentro de la plantilla.")}
             </EmptySubtitle>
           </EmptyState>
         ) : (

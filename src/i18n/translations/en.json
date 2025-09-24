@@ -117,7 +117,27 @@
     "documentType": "Document Type",
     "documentNumber": "Document Number",
     "emergencyContact": "Emergency Contact",
-    "back": "Back"
+    "back": "Back",
+    "pageEyebrow": "2025 Squad · Salgar Dorada FC",
+    "pageTitle": "Talent that vibrates with every minute of play.",
+    "pageSubtitle": "Discover the protagonists of our club: young players who combine discipline, energy and an offensive vision that inspires the fans.",
+    "searchPlaceholder": "Search player by name or jersey number",
+    "searchAriaLabel": "Search player by name or number",
+    "playerSingular": "player",
+    "playerPlural": "players",
+    "searchMatches": "Matches with \"{{query}}\"",
+    "exploreAll": "Explore the entire squad",
+    "noMatches": "No matches found",
+    "adjustSearch": "Adjust your search or discover another position within the squad.",
+    "loading": "Loading...",
+    "profileLabels": {
+      "number": "No:",
+      "mobile": "Mobile:",
+      "address": "Address:",
+      "birthDate": "Birth Date:",
+      "phone": "Phone:",
+      "nickname": "Nickname:"
+    }
   },
   "matches": {
     "title": "Matches",

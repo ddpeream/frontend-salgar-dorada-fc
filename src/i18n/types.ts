@@ -128,6 +128,23 @@ export type TranslationKeys = {
     documentNumber: string;
     emergencyContact: string;
     back: string;
+    pageEyebrow: string;
+    pageTitle: string;
+    pageSubtitle: string;
+    searchPlaceholder: string;
+    searchAriaLabel: string;
+    playerSingular: string;
+    playerPlural: string;
+    searchMatches: string;
+    exploreAll: string;
+    noMatches: string;
+    adjustSearch: string;
+    loading: string;
+    profileLabels: {
+      number: string;
+      mobile: string;
+      address: string;
+    };
   };
   matches: {
     title: string;

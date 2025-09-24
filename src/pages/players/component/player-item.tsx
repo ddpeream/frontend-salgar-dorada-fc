@@ -25,6 +25,7 @@ import {
   DetailValue,
 } from "../list/players.styled";
 import { formCreatedDto } from "../../../service/players/player.interfase";
+import { useAppTranslation } from "../../../i18n/hooks";
 
 interface PlayerItemProps {
   player: formCreatedDto;
@@ -62,6 +63,7 @@ const buttonVariants = {
 
 const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
   const [expanded, setExpanded] = React.useState(false);
+  const { t } = useAppTranslation();
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
@@ -110,7 +112,11 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
       <CardTop>
         <PlayerNumber>#{player.No?.padStart(2, "0")}</PlayerNumber>
         <PlayerAvatar>
-          <AvatarImage src={avatarSource} alt={`Jugador ${player.nombre}`} loading="lazy" />
+          <AvatarImage
+            src={avatarSource}
+            alt={`Jugador ${player.nombre}`}
+            loading="lazy"
+          />
         </PlayerAvatar>
         <PlayerHeading>
           <PlayerName>
@@ -124,11 +130,15 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
 
       <PlayerContact>
         <ContactRow>
-          <ContactLabel>Celular</ContactLabel>
+          <ContactLabel>
+            {t("players.profileLabels.mobile", "Celular")}
+          </ContactLabel>
           <ContactValue>{player.celular ?? "Sin registro"}</ContactValue>
         </ContactRow>
         <ContactRow>
-          <ContactLabel>Dirección</ContactLabel>
+          <ContactLabel>
+            {t("players.profileLabels.address", "Dirección")}
+          </ContactLabel>
           <ContactValue>{player.direccion ?? "Sin registro"}</ContactValue>
         </ContactRow>
       </PlayerContact>
@@ -157,15 +167,15 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
           >
             <DetailsGrid>
               <DetailColumn>
-                <DetailLabel>Fecha de nacimiento</DetailLabel>
+                <DetailLabel>{t("players.profileLabels.birthDate", "Fecha de nacimiento")}</DetailLabel>
                 <DetailValue>{formattedBirth}</DetailValue>
               </DetailColumn>
               <DetailColumn>
-                <DetailLabel>Teléfono</DetailLabel>
+                <DetailLabel>{t("players.profileLabels.phone", "Teléfono")}</DetailLabel>
                 <DetailValue>{player.telefono ?? "Sin registro"}</DetailValue>
               </DetailColumn>
               <DetailColumn>
-                <DetailLabel>Identificador</DetailLabel>
+                <DetailLabel>{t("players.profileLabels.nickname", "Identificador")}</DetailLabel>
                 <DetailValue>{player._id?.slice(0, 8) ?? "N/A"}</DetailValue>
               </DetailColumn>
             </DetailsGrid>
