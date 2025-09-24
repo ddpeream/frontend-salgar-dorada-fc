@@ -23,7 +23,81 @@
     "quickActions": "Acciones Rápidas",
     "viewPlayers": "Ver Jugadores",
     "viewMatches": "Ver Partidos",
-    "registerPlayer": "Registrar Jugador"
+    "registerPlayer": "Registrar Jugador",
+    "hero": {
+      "accent": "Salgar Dorada FC · ADN competitivo",
+      "title": "Una casa para soñar, entrenar y ganar.",
+      "subtitle": "Impulsamos talento con metodología innovadora, estadios vibrantes y una comunidad que nunca deja de alentar.",
+      "knowTeam": "Conoce la plantilla",
+      "joinClub": "Súmate al club"
+    },
+    "stats": {
+      "talents": "Talentos en formación",
+      "staff": "Staff especializado",
+      "fans": "Hinchas conectados"
+    },
+    "vision": {
+      "accent": "Visión & misión",
+      "title": "Fútbol con identidad, innovación y pertenencia.",
+      "subtitle": "Nuestra visión es liderar el desarrollo deportivo de la región; nuestra misión, acompañar a cada atleta y fan en un viaje inolvidable."
+    },
+    "highlights": {
+      "title": "El espíritu de Salgar",
+      "subtitle": "Descubre los valores que nos definen y la visión que impulsa nuestro futuro",
+      "sectionAccent": "Visión & misión",
+      "sectionTitle": "Fútbol con identidad, innovación y pertenencia.",
+      "sectionLead": "Nuestra visión es liderar el desarrollo deportivo de la región; nuestra misión, acompañar a cada atleta y fan en un viaje inolvidable.",
+      "methodology": {
+        "tag": "Metodología",
+        "title": "Entrenamiento inteligente y personalizado",
+        "description": "Sesiones con analítica de rendimiento y feedback inmediato para potenciar cada detalle técnico.",
+        "meta": "+140 horas de video-análisis",
+        "action": "Ver filosofía"
+      },
+      "academy": {
+        "tag": "Academia",
+        "title": "Talento joven que evoluciona con propósito",
+        "description": "Programas escalonados para categorías formativas con mentores que impulsan disciplina y liderazgo.",
+        "meta": "Imaginamos el próximo debut",
+        "action": "Quiero probarme"
+      },
+      "innovation": {
+        "tag": "Innovación",
+        "title": "Experiencias inmersivas para la afición",
+        "description": "Contenido exclusivo, streaming multicámara y acceso anticipado a eventos para quienes viven el club 24/7.",
+        "meta": "Fan engagement en tiempo real",
+        "action": "Explorar novedades"
+      }
+    },
+    "cta": {
+      "accent": "Únete a la experiencia",
+      "title": "Entrena, compite y construye historia con nosotros.",
+      "text": "Si tu sueño es vestir nuestros colores, estar más cerca del staff o impulsar el club desde la grada, tenemos un espacio diseñado para ti.",
+      "applyButton": "Aplicar a pruebas",
+      "discoverButton": "Descubrir la plantilla"
+    },
+    "slider": {
+      "accent": "Momentos destacados",
+      "title": "Historias que marcan el presente del club.",
+      "subtitle": "Explora nuestra identidad visual, la energía en las gradas y la tecnología que impulsa cada semana de trabajo.",
+      "previousSlide": "Slide anterior",
+      "nextSlide": "Slide siguiente",
+      "home_matches": {
+        "label": "Partidos en casa",
+        "title": "Un fortín en cada jornada",
+        "text": "Vive el ambiente electrizante del Coliseo Metropolitano con mosaicos, cánticos y fútbol total."
+      },
+      "away_style": {
+        "label": "Estilo visitante",
+        "title": "Personalidad en cualquier cancha",
+        "text": "Una propuesta valiente, dinámica y vertical que sorprende a rivales y conquista nuevas plazas."
+      },
+      "training": {
+        "label": "Entrenamientos",
+        "title": "Tecnología al servicio del equipo",
+        "text": "GPS, sensores biométricos y simulaciones para diseñar cargas óptimas y llegar listos a cada reto."
+      }
+    }
   },
   "players": {
     "title": "Jugadores",

@@ -5,6 +5,7 @@ import {
   useTransform,
   type MotionProps,
 } from "framer-motion";
+import { useAppTranslation } from "../../i18n/hooks";
 import {
   Main,
   Hero,
@@ -61,60 +62,6 @@ import sdVisitante from "../../assets/sd-visitante.jpeg";
 import sdCasaBody from "../../assets/sd-casa-body.jpeg";
 import sdVisitanteBody from "../../assets/sd-visitante-body.jpeg";
 
-const stats = [
-  { value: "32", label: "Talentos en formación" },
-  { value: "12", label: "Staff especializado" },
-  { value: "48K", label: "Hinchas conectados" },
-];
-
-const highlightCards = [
-  {
-    tag: "Metodología",
-    title: "Entrenamiento inteligente y personalizado",
-    description:
-      "Sesiones con analítica de rendimiento y feedback inmediato para potenciar cada detalle técnico.",
-    meta: "+140 horas de video-análisis",
-    action: { label: "Ver filosofía", to: "/players" },
-  },
-  {
-    tag: "Academia",
-    title: "Talento joven que evoluciona con propósito",
-    description:
-      "Programas escalonados para categorías formativas con mentores que impulsan disciplina y liderazgo.",
-    meta: "Imaginamos el próximo debut",
-    action: { label: "Quiero probarme", to: "/form" },
-  },
-  {
-    tag: "Innovación",
-    title: "Experiencias inmersivas para la afición",
-    description:
-      "Contenido exclusivo, streaming multicámara y acceso anticipado a eventos para quienes viven el club 24/7.",
-    meta: "Fan engagement en tiempo real",
-    action: { label: "Explorar novedades", to: "/#unete" },
-  },
-];
-
-const sliderItems = [
-  {
-    image: sdCasa,
-    label: "Partidos en casa",
-    title: "Un fortín en cada jornada",
-    text: "Vive el ambiente electrizante del Coliseo Metropolitano con mosaicos, cánticos y fútbol total.",
-  },
-  {
-    image: sdVisitante,
-    label: "Estilo visitante",
-    title: "Personalidad en cualquier cancha",
-    text: "Una propuesta valiente, dinámica y vertical que sorprende a rivales y conquista nuevas plazas.",
-  },
-  {
-    image: sdVisitanteBody,
-    label: "Entrenamientos",
-    title: "Tecnología al servicio del equipo",
-    text: "GPS, sensores biométricos y simulaciones para diseñar cargas óptimas y llegar listos a cada reto.",
-  },
-];
-
 const revealProps: MotionProps = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
@@ -123,6 +70,7 @@ const revealProps: MotionProps = {
 };
 
 export const Home: React.FC = () => {
+  const { t } = useAppTranslation();
   const heroRef = React.useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -131,9 +79,63 @@ export const Home: React.FC = () => {
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-6%", "12%"]);
   const parallaxScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  const totalSlides = sliderItems.length;
+  const totalSlides = 3;
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [direction, setDirection] = React.useState<1 | -1>(1);
+
+  // Stats con traducciones
+  const stats = [
+    { value: "32", label: t('home.stats.talents') },
+    { value: "12", label: t('home.stats.staff') },
+    { value: "48K", label: t('home.stats.fans') },
+  ];
+
+  // Highlight cards con traducciones
+  const highlightCards = [
+    {
+      tag: t('home.highlights.methodology.tag'),
+      title: t('home.highlights.methodology.title'),
+      description: t('home.highlights.methodology.description'),
+      meta: t('home.highlights.methodology.meta'),
+      action: { label: t('home.highlights.methodology.action'), to: "/players" },
+    },
+    {
+      tag: t('home.highlights.academy.tag'),
+      title: t('home.highlights.academy.title'),
+      description: t('home.highlights.academy.description'),
+      meta: t('home.highlights.academy.meta'),
+      action: { label: t('home.highlights.academy.action'), to: "/form" },
+    },
+    {
+      tag: t('home.highlights.innovation.tag'),
+      title: t('home.highlights.innovation.title'),
+      description: t('home.highlights.innovation.description'),
+      meta: t('home.highlights.innovation.meta'),
+      action: { label: t('home.highlights.innovation.action'), to: "/#unete" },
+    },
+  ];
+
+  // Slider items con traducciones
+  const sliderItems = [
+    {
+      image: sdCasa,
+      label: t('home.slider.home_matches.label'),
+      title: t('home.slider.home_matches.title'),
+      text: t('home.slider.home_matches.text'),
+    },
+    {
+      image: sdVisitante,
+      label: t('home.slider.away_style.label'),
+      title: t('home.slider.away_style.title'),
+      text: t('home.slider.away_style.text'),
+    },
+    {
+      image: sdVisitanteBody,
+      label: t('home.slider.training.label'),
+      title: t('home.slider.training.title'),
+      text: t('home.slider.training.text'),
+    },
+  ];
 
   const goToSlide = React.useCallback(
     (dir: 1 | -1) => {
@@ -170,16 +172,16 @@ export const Home: React.FC = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
           <Accent>
-            Salgar Dorada FC · ADN competitivo
+            {t('home.hero.accent')}
             <span role="presentation">⚡</span>
           </Accent>
-          <HeroTitle>Una casa para soñar, entrenar y ganar.</HeroTitle>
+          <HeroTitle>{t('home.hero.title')}</HeroTitle>
           <HeroSubtitle>
-            Impulsamos talento con metodología innovadora, estadios vibrantes y una comunidad que nunca deja de alentar.
+            {t('home.hero.subtitle')}
           </HeroSubtitle>
           <ButtonRow>
-            <FilledButton to="/players">Conoce la plantilla</FilledButton>
-            <OutlineButton to="/form">Súmate al club</OutlineButton>
+            <FilledButton to="/players">{t('home.hero.knowTeam')}</FilledButton>
+            <OutlineButton to="/form">{t('home.hero.joinClub')}</OutlineButton>
           </ButtonRow>
           <StatBoard>
             {stats.map((stat) => (
@@ -195,10 +197,10 @@ export const Home: React.FC = () => {
       <ScrollRevealSection {...revealProps}>
         <HighlightsSection>
           <SectionHeading>
-            <Accent>Visión &amp; misión</Accent>
-            <SectionTitle>Fútbol con identidad, innovación y pertenencia.</SectionTitle>
+            <Accent>{t('home.highlights.sectionAccent')}</Accent>
+            <SectionTitle>{t('home.highlights.sectionTitle')}</SectionTitle>
             <SectionLead>
-              Nuestra visión es liderar el desarrollo deportivo de la región; nuestra misión, acompañar a cada atleta y fan en un viaje inolvidable.
+              {t('home.highlights.sectionLead')}
             </SectionLead>
           </SectionHeading>
           <HighlightsGrid>
@@ -231,14 +233,14 @@ export const Home: React.FC = () => {
       <ScrollRevealSection {...revealProps}>
         <CTASection id="unete">
           <CTAContent>
-            <CTAAccent>Únete a la experiencia</CTAAccent>
-            <CTATitle>Entrena, compite y construye historia con nosotros.</CTATitle>
+            <CTAAccent>{t('home.cta.accent')}</CTAAccent>
+            <CTATitle>{t('home.cta.title')}</CTATitle>
             <CTAText>
-              Si tu sueño es vestir nuestros colores, estar más cerca del staff o impulsar el club desde la grada, tenemos un espacio diseñado para ti.
+              {t('home.cta.text')}
             </CTAText>
             <CTAButtons>
-              <FilledButton to="/form">Aplicar a pruebas</FilledButton>
-              <OutlineButton to="/players">Descubrir la plantilla</OutlineButton>
+              <FilledButton to="/form">{String(t('home.cta.applyButton'))}</FilledButton>
+              <OutlineButton to="/players">{String(t('home.cta.discoverButton'))}</OutlineButton>
             </CTAButtons>
           </CTAContent>
           <CTAVisual
@@ -255,10 +257,10 @@ export const Home: React.FC = () => {
       <ScrollRevealSection {...revealProps}>
         <SliderSection>
           <SectionHeading>
-            <Accent>Momentos destacados</Accent>
-            <SectionTitle>Historias que marcan el presente del club.</SectionTitle>
+            <Accent>{t('home.slider.accent')}</Accent>
+            <SectionTitle>{t('home.slider.title')}</SectionTitle>
             <SectionLead>
-              Explora nuestra identidad visual, la energía en las gradas y la tecnología que impulsa cada semana de trabajo.
+              {t('home.slider.subtitle')}
             </SectionLead>
           </SectionHeading>
           <SliderContainer>
@@ -281,10 +283,10 @@ export const Home: React.FC = () => {
               </AnimatePresence>
             </SliderViewport>
             <SliderControls>
-              <ControlButton type="button" aria-label="Slide anterior" onClick={() => goToSlide(-1)}>
+              <ControlButton type="button" aria-label={String(t('home.slider.previousSlide'))} onClick={() => goToSlide(-1)}>
                 <span aria-hidden>←</span>
               </ControlButton>
-              <ControlButton type="button" aria-label="Slide siguiente" onClick={() => goToSlide(1)}>
+              <ControlButton type="button" aria-label={String(t('home.slider.nextSlide'))} onClick={() => goToSlide(1)}>
                 <span aria-hidden>→</span>
               </ControlButton>
             </SliderControls>

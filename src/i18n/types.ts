@@ -34,6 +34,80 @@ export type TranslationKeys = {
     viewPlayers: string;
     viewMatches: string;
     registerPlayer: string;
+    hero: {
+      accent: string;
+      title: string;
+      subtitle: string;
+      knowTeam: string;
+      joinClub: string;
+    };
+    stats: {
+      talents: string;
+      staff: string;
+      fans: string;
+    };
+    vision: {
+      accent: string;
+      title: string;
+      subtitle: string;
+    };
+    highlights: {
+      title: string;
+      subtitle: string;
+      sectionAccent: string;
+      sectionTitle: string;
+      sectionLead: string;
+      methodology: {
+        tag: string;
+        title: string;
+        description: string;
+        meta: string;
+        action: string;
+      };
+      academy: {
+        tag: string;
+        title: string;
+        description: string;
+        meta: string;
+        action: string;
+      };
+      innovation: {
+        tag: string;
+        title: string;
+        description: string;
+        meta: string;
+        action: string;
+      };
+    };
+    cta: {
+      accent: string;
+      title: string;
+      text: string;
+      applyButton: string;
+      discoverButton: string;
+    };
+    slider: {
+      accent: string;
+      title: string;
+      subtitle: string;
+      previousSlide: string;
+      nextSlide: string;
+      home_matches: {
+        label: string;
+        title: string;
+        text: string;
+      };
+      away_style: {
+        label: string;
+        title: string;
+        text: string;
+      };
+      training: {
+        label: string;
+        title: string;
+        text: string;
+      };
+    };
   };
   players: {
     title: string;
