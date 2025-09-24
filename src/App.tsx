@@ -9,7 +9,7 @@ import AppLayout from './components/layout';
 
 function App() {
   return (
-    <BrowserRouter basename="/frontend-salgar-dorada-fc">
+    <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />

@@ -14,7 +14,6 @@ import {
   Error,
 } from "./login.styles";
 import escudo from "../../assets/escudo-sd.jpg";
-import axios, { AxiosError } from "axios";
 import BackButton from "../../components/back-button";
 
 export const Login = () => {

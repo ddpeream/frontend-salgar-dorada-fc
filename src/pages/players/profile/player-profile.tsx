@@ -17,9 +17,9 @@ const PlayerProfile = () => {
       return;
     }
 
-    const fetchPlayer = async () => {
+    const fetchPlayer = async (id: string) => {
       try {
-        const playerData = await getPlayerById(playerId);
+        const playerData = await getPlayerById(id);
         setPlayer(playerData);
         setIsLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ const PlayerProfile = () => {
         setIsLoading(false);
       }
     };
-    fetchPlayer();
+    fetchPlayer(playerId);
   }, [navigate, playerId]);
 
   if (isLoading) {
