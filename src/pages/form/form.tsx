@@ -3,8 +3,6 @@ import { AnimatePresence } from "framer-motion";
 import { useFormik, getIn } from "formik";
 import * as Yup from "yup";
 import { useAppTranslation } from "../../i18n/hooks";
-
-const phoneRegex = /^[0-9()+\-\s]{7,}$/;
 import {
   FormContainer,
   BackgroundGlow,
@@ -39,6 +37,8 @@ import escudo from "../../assets/escudo-sd.jpg";
 import { createPlayer } from "../../service/players/player.service";
 import { formCreatedDto } from "../../service/players/player.interfase";
 import BackButton from "../../components/back-button";
+
+const phoneRegex = /^[0-9()+\-\s]{7,}$/;
 
 type FeedbackState = {
   type: "success" | "error";
@@ -297,13 +297,13 @@ export const FormPlayer: React.FC = () => {
                         autoComplete={field.autoComplete}
                         $hasError={showError}
                         {...fieldProps}
-                        onBlur={(event) => {
+                        onBlur={(event: any) => {
                           fieldProps.onBlur(event);
                           if (feedback) {
                             setFeedback(null);
                           }
                         }}
-                        onChange={(event) => {
+                        onChange={(event: any) => {
                           fieldProps.onChange(event);
                           if (feedback) {
                             setFeedback(null);
