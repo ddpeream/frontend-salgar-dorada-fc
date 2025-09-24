@@ -88,6 +88,10 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
 
   const summaryText = React.useMemo(() => {
     const role = player.tipo ? player.tipo.toLowerCase() : "jugador";
+    if (role.includes("director")) {
+      return "Director técnico que diseña la estrategia, inspira al grupo y ajusta cada movimiento desde la raya.";
+    }
+
     return `Integrante ${role} que aporta energía y visión competitiva a cada encuentro.`;
   }, [player.tipo]);
 
