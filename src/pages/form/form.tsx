@@ -2,6 +2,9 @@ import React from "react";
 import { AnimatePresence } from "framer-motion";
 import { useFormik, getIn } from "formik";
 import * as Yup from "yup";
+import { useAppTranslation } from "../../i18n/hooks";
+
+const phoneRegex = /^[0-9()+\-\s]{7,}$/;
 import {
   FormContainer,
   BackgroundGlow,
@@ -42,119 +45,118 @@ type FeedbackState = {
   message: string;
 } | null;
 
-const phoneRegex = /^[0-9()+\-\s]{7,}$/;
-
-const validationSchema = Yup.object({
-  nombre: Yup.string()
-    .max(50, "Máximo 50 caracteres")
-    .required("El nombre es obligatorio"),
-  apellido: Yup.string()
-    .max(50, "Máximo 50 caracteres")
-    .required("El apellido es obligatorio"),
-  direccion: Yup.string()
-    .max(100, "Máximo 100 caracteres")
-    .required("La dirección es obligatoria"),
-  tipo: Yup.string()
-    .max(40, "Máximo 40 caracteres")
-    .required("El tipo de jugador es obligatorio"),
-  No: Yup.string()
-    .max(5, "Máximo 5 caracteres")
-    .required("El número de identificación es obligatorio"),
-  fecha_nacimiento: Yup.string()
-    .required("La fecha de nacimiento es obligatoria")
-    .test("valid-date", "Ingresa una fecha válida", (value) =>
-      value ? !Number.isNaN(Date.parse(value)) : false
-    ),
-  celular: Yup.string()
-    .matches(phoneRegex, "Ingresa un celular válido")
-    .required("El celular es obligatorio"),
-  telefono: Yup.string()
-    .matches(phoneRegex, "Ingresa un teléfono válido")
-    .required("El teléfono es obligatorio"),
-});
-
-const formSections = [
-  {
-    id: "datos-personales",
-    title: "Datos personales",
-    description: "Cuéntanos quién eres y cuándo celebras tu cumpleaños.",
-    fields: [
-      {
-        name: "nombre",
-        label: "Nombre",
-        type: "text",
-        placeholder: "Nombre del jugador",
-        autoComplete: "given-name",
-      },
-      {
-        name: "apellido",
-        label: "Apellido",
-        type: "text",
-        placeholder: "Apellidos",
-        autoComplete: "family-name",
-      },
-      {
-        name: "fecha_nacimiento",
-        label: "Fecha de nacimiento",
-        type: "date",
-        placeholder: "DD/MM/AAAA",
-        autoComplete: "bday",
-      },
-    ],
-  },
-  {
-    id: "datos-contacto",
-    title: "Datos de contacto",
-    description: "Necesitamos formas de comunicación para confirmar tu inscripción.",
-    fields: [
-      {
-        name: "telefono",
-        label: "Teléfono fijo",
-        type: "tel",
-        placeholder: "Teléfono principal",
-        autoComplete: "tel",
-      },
-      {
-        name: "celular",
-        label: "Celular",
-        type: "tel",
-        placeholder: "Celular de contacto",
-        autoComplete: "tel-national",
-      },
-      {
-        name: "direccion",
-        label: "Dirección",
-        type: "text",
-        placeholder: "Dirección completa",
-        autoComplete: "street-address",
-      },
-    ],
-  },
-  {
-    id: "datos-deportivos",
-    title: "Perfil deportivo",
-    description: "Aporta información clave para ubicarte en el plantel.",
-    fields: [
-      {
-        name: "tipo",
-        label: "Posición",
-        type: "text",
-        placeholder: "Posición natural",
-        autoComplete: "off",
-      },
-      {
-        name: "No",
-        label: "Identificación",
-        type: "text",
-        placeholder: "Documento o dorsal",
-        autoComplete: "off",
-      },
-    ],
-  },
-];
-
 export const FormPlayer: React.FC = () => {
+  const { t } = useAppTranslation();
   const [feedback, setFeedback] = React.useState<FeedbackState>(null);
+
+  const validationSchema = Yup.object({
+    nombre: Yup.string()
+      .max(50, String(t('form.validation.maxCharacters', { count: 50 })))
+      .required(String(t('form.validation.requiredName'))),
+    apellido: Yup.string()
+      .max(50, String(t('form.validation.maxCharacters', { count: 50 })))
+      .required(String(t('form.validation.requiredLastName'))),
+    direccion: Yup.string()
+      .max(100, String(t('form.validation.maxCharacters', { count: 100 })))
+      .required(String(t('form.validation.requiredAddress'))),
+    tipo: Yup.string()
+      .max(40, String(t('form.validation.maxCharacters', { count: 40 })))
+      .required(String(t('form.validation.requiredPlayerType'))),
+    No: Yup.string()
+      .max(5, String(t('form.validation.maxCharacters', { count: 5 })))
+      .required(String(t('form.validation.requiredId'))),
+    fecha_nacimiento: Yup.string()
+      .required(String(t('form.validation.requiredBirthDate')))
+      .test("valid-date", String(t('form.validation.validDate')), (value) =>
+        value ? !Number.isNaN(Date.parse(value)) : false
+      ),
+    celular: Yup.string()
+      .matches(phoneRegex, String(t('form.validation.validPhone')))
+      .required(String(t('form.validation.requiredPhone'))),
+    telefono: Yup.string()
+      .matches(phoneRegex, String(t('form.validation.validLandline')))
+      .required(String(t('form.validation.requiredLandline'))),
+  });
+
+  const formSections = [
+    {
+      id: "datos-personales",
+      title: String(t('form.personalData')),
+      description: String(t('form.personalDataDescription')),
+      fields: [
+        {
+          name: "nombre",
+          label: String(t('form.firstName')),
+          type: "text",
+          placeholder: String(t('form.firstNamePlaceholder')),
+          autoComplete: "given-name",
+        },
+        {
+          name: "apellido",
+          label: String(t('form.lastName')),
+          type: "text",
+          placeholder: String(t('form.lastNamePlaceholder')),
+          autoComplete: "family-name",
+        },
+        {
+          name: "fecha_nacimiento",
+          label: String(t('form.birthDate')),
+          type: "date",
+          placeholder: String(t('form.birthDatePlaceholder')),
+          autoComplete: "bday",
+        },
+      ],
+    },
+    {
+      id: "datos-contacto",
+      title: String(t('form.contactData')),
+      description: String(t('form.contactDataDescription')),
+      fields: [
+        {
+          name: "telefono",
+          label: String(t('form.phone')),
+          type: "tel",
+          placeholder: String(t('form.phonePlaceholder')),
+          autoComplete: "tel",
+        },
+        {
+          name: "celular",
+          label: String(t('form.mobile')),
+          type: "tel",
+          placeholder: String(t('form.mobilePlaceholder')),
+          autoComplete: "tel-national",
+        },
+        {
+          name: "direccion",
+          label: String(t('form.address')),
+          type: "text",
+          placeholder: String(t('form.addressPlaceholder')),
+          autoComplete: "street-address",
+        },
+      ],
+    },
+    {
+      id: "datos-deportivos",
+      title: String(t('form.sportsData')),
+      description: String(t('form.sportsDataDescription')),
+      fields: [
+        {
+          name: "tipo",
+          label: String(t('form.position')),
+          type: "text",
+          placeholder: String(t('form.positionPlaceholder')),
+          autoComplete: "off",
+        },
+        {
+          name: "No",
+          label: String(t('form.identification')),
+          type: "text",
+          placeholder: String(t('form.identificationPlaceholder')),
+          autoComplete: "off",
+        },
+      ],
+    },
+  ];
 
   const formik = useFormik<FormState>({
     initialValues: {
@@ -188,14 +190,14 @@ export const FormPlayer: React.FC = () => {
         await createPlayer(payload);
         setFeedback({
           type: "success",
-          message: "Tu inscripción ha sido recibida. Nuestro staff te contactará muy pronto.",
+          message: String(t('form.feedback.success')),
         });
         resetForm();
       } catch (error: any) {
         const message =
           error?.response?.data?.message ??
           error?.message ??
-          "No pudimos procesar tu inscripción. Inténtalo nuevamente en unos minutos.";
+          String(t('form.feedback.error'));
         setFeedback({ type: "error", message });
       } finally {
         setSubmitting(false);
@@ -230,11 +232,11 @@ export const FormPlayer: React.FC = () => {
         >
           <Badge>
             <BadgeIcon src={escudo} alt="Escudo Salgar Dorada FC" />
-            Convocatoria oficial 2025
+            {t('form.officialCall')}
           </Badge>
-          <FormTitle>Inscripción de jugadores</FormTitle>
+          <FormTitle>{t('form.title')}</FormTitle>
           <FormSubtitle>
-            Completa el formulario para postularte a la próxima camada de talento Salgar Dorada FC. Cada dato nos ayuda a conocerte mejor.
+            {t('form.subtitle')}
           </FormSubtitle>
         </FormHeader>
         <AnimatePresence>
@@ -332,9 +334,9 @@ export const FormPlayer: React.FC = () => {
           ))}
           <SubmitRow>
             <SubmitTextGroup>
-              <SubmitTitle>Listo para unirte</SubmitTitle>
+              <SubmitTitle>{t('form.submitTitle')}</SubmitTitle>
               <SubmitHint>
-                Nuestro equipo revisará tus datos y te contactará para agendar las pruebas. Mantén tu teléfono disponible.
+                {t('form.submitHint')}
               </SubmitHint>
             </SubmitTextGroup>
             <SubmitButton
@@ -343,12 +345,12 @@ export const FormPlayer: React.FC = () => {
               whileTap={{ scale: 0.96 }}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Enviando..." : "Enviar solicitud"}
+              {isSubmitting ? t('form.submitting') : t('form.submitButton')}
               <span aria-hidden>→</span>
             </SubmitButton>
           </SubmitRow>
           <FormFooterNote>
-            Al enviar autorizas el tratamiento de datos personales según las políticas del club.
+            {t('form.footerNote')}
           </FormFooterNote>
         </StyledForm>
       </FormContent>
