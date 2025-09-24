@@ -15,6 +15,7 @@ import {
 } from "./login.styles";
 import escudo from "../../assets/escudo-sd.jpg";
 import axios, { AxiosError } from "axios";
+import BackButton from "../../components/back-button";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ export const Login = () => {
   return (
     <Container>
       <ContainerForm>
+        <BackButton fallbackPath="/" />
         <Image src={escudo} />
 
         <Form onSubmit={handleSubmit}>

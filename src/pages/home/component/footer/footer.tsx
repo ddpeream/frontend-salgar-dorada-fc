@@ -13,10 +13,10 @@ export const Footer = () => {
     <FooterContainer>
       <FooterLogo src="logo.png" alt="Logo" />
       <FooterLinks>
-        <FooterLink href="#">Home</FooterLink>
-        <FooterLink href="#">About</FooterLink>
-        <FooterLink href="#">Services</FooterLink>
-        <FooterLink href="#">Contact Us</FooterLink>
+        <FooterLink to="/">Inicio</FooterLink>
+        <FooterLink to="/players">Plantilla</FooterLink>
+        <FooterLink to="/form">Inscripción</FooterLink>
+        <FooterLink to="/login">Iniciar sesión</FooterLink>
       </FooterLinks>
       <FooterSocialMedia>
         <FooterSocialMediaLink href="#">

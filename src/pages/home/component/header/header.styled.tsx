@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { AppBar, Button, IconButton, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export const HeaderAppBar = styled(AppBar)`
   background-color: #acd9b2;
@@ -24,10 +23,23 @@ export const HeaderButton = styled(Button)`
   color: #fff;
 `;
 
-export const HeaderAccountCircleIcon = styled(AccountCircleIcon)`
-  color: #fff;
+export const HeaderNavLink = styled(NavLink)`
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  &.active ${HeaderButton} {
+    background-color: rgba(255, 255, 255, 0.18);
+  }
 `;
 
-export const HeaderShoppingCartIcon = styled(ShoppingCartIcon)`
-  color: #fff;
+export const HeaderNavLinksWrapper = styled.nav`
+  display: none;
+  align-items: center;
+  gap: 12px;
+
+  @media (min-width: 900px) {
+    display: flex;
+  }
 `;

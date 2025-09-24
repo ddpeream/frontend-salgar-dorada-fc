@@ -8,7 +8,7 @@ import PlayerList from './pages/players/list/players';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/frontend-salgar-dorada-fc">
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />

@@ -6,6 +6,7 @@ import { FormContainer, Image, Title, Form, Error } from "./form.style";
 import { FormState } from "./interface/form-state";
 import escudo from "../../assets/escudo-sd.jpg";
 import { createPlayer } from "../../service/players/player.service";
+import BackButton from "../../components/back-button";
 
 export const FormPlayer: React.FC = () => {
   const [errorForm, setErrorForm] = React.useState<Error[]>([]);
@@ -71,6 +72,7 @@ export const FormPlayer: React.FC = () => {
 
   return (
     <FormContainer>
+      <BackButton fallbackPath="/" />
       <Form onSubmit={handleSubmit}>
         <Grid
           container

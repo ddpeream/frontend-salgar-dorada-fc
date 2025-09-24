@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Main = styled.main`
   display: flex;
@@ -63,7 +64,7 @@ export const CallToActionTitle = styled.h3`
   margin-bottom: 20px;
 `;
 
-export const CallToActionButton = styled.button`
+export const CallToActionButton = styled(Link)`
   font-size: 1.2rem;
   padding: 10px 20px;
   border: 2px solid #007bff;
@@ -71,6 +72,8 @@ export const CallToActionButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 
   &:hover {
     background-color: #007bff;

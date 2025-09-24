@@ -43,14 +43,14 @@ export const Home: React.FC = () => {
             <FeatureDescription>
               Una característica innovadora y única de nuestro club que lo diferencia de los demás equipos.
             </FeatureDescription>
-            <CallToActionButton>¡Únete ahora!</CallToActionButton>
+            <CallToActionButton to="/players">Conoce la plantilla</CallToActionButton>
           </FeatureText>
         </FeatureSection>
         <Divider />
-        <CallToAction>
+        <CallToAction id="unete">
           <CallToActionTitle>Únete a nuestro equipo</CallToActionTitle>
           <p>¿Quieres formar parte de nuestra familia? Únete hoy mismo.</p>
-          <CallToActionButton>¡Únete ahora!</CallToActionButton>
+          <CallToActionButton to="/form">¡Únete ahora!</CallToActionButton>
         </CallToAction>
       </Main>
       <Footer />

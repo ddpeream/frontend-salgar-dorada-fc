@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import {
-  Avatar,
-  Box,
-  Grid,
-  Paper,
-  Typography,
-  createStyles,
-} from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Avatar, Box, Grid, Paper, Typography } from "@mui/material";
 import { getPlayerById } from "../../../service/players/player.service";
+import BackButton from "../../../components/back-button";
 
 const PlayerProfile = () => {
   const [player, setPlayer] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
-  let { state } = useLocation();
+  const location = useLocation();
+  const playerId = (location.state as { _id?: string } | undefined)?._id;
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!playerId) {
+      navigate("/players");
+      return;
+    }
+
     const fetchPlayer = async () => {
       try {
-        const playerData = await getPlayerById(state._id);
+        const playerData = await getPlayerById(playerId);
         setPlayer(playerData);
         setIsLoading(false);
       } catch (error) {
@@ -27,7 +28,7 @@ const PlayerProfile = () => {
       }
     };
     fetchPlayer();
-  }, []);
+  }, [navigate, playerId]);
 
   if (isLoading) {
     return <div>Cargando...</div>;
@@ -35,6 +36,7 @@ const PlayerProfile = () => {
 
   return (
     <Box p={3}>
+      <BackButton fallbackPath="/players" />
       <Paper sx={{ padding: 3 }}>
         <Grid container spacing={2} sx={{ alignItems: 'center' }}>
           <Grid item xs={12}>
