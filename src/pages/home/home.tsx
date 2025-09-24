@@ -90,7 +90,7 @@ const highlightCards = [
     description:
       "Contenido exclusivo, streaming multicámara y acceso anticipado a eventos para quienes viven el club 24/7.",
     meta: "Fan engagement en tiempo real",
-    action: { label: "Explorar novedades", to: "/login" },
+    action: { label: "Explorar novedades", to: "/#unete" },
   },
 ];
 
@@ -238,7 +238,7 @@ export const Home: React.FC = () => {
             </CTAText>
             <CTAButtons>
               <FilledButton to="/form">Aplicar a pruebas</FilledButton>
-              <OutlineButton to="/login">Acceso socios</OutlineButton>
+              <OutlineButton to="/players">Descubrir la plantilla</OutlineButton>
             </CTAButtons>
           </CTAContent>
           <CTAVisual

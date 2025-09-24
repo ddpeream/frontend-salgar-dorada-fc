@@ -16,7 +16,6 @@ export const Footer = () => {
         <FooterLink to="/">Inicio</FooterLink>
         <FooterLink to="/players">Plantilla</FooterLink>
         <FooterLink to="/form">Inscripción</FooterLink>
-        <FooterLink to="/login">Iniciar sesión</FooterLink>
       </FooterLinks>
       <FooterSocialMedia>
         <FooterSocialMediaLink href="#">

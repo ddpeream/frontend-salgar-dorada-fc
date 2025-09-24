@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ProtectedRoute from './pages/login/protected-route';
 import { Home } from './pages/home/home';
 import { FormPlayer } from './pages/form/form';
 import { Login } from './pages/login/login';
@@ -16,7 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/players" element={<PlayerList />} />
           <Route path="/players/:id" element={<PlayerProfile />} />
-          <Route path="/form" element={<ProtectedRoute component={FormPlayer} />} />
+          <Route path="/form" element={<FormPlayer />} />
         </Route>
       </Routes>
     </BrowserRouter>

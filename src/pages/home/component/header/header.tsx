@@ -1,6 +1,5 @@
 import { MouseEvent as ReactMouseEvent, useState } from "react";
 import { Toolbar, Menu, MenuItem } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
 import {
   HeaderIconButton,
@@ -16,7 +15,6 @@ const NAV_LINKS = [
   { label: "Inicio", to: "/", end: true },
   { label: "Plantilla", to: "/players" },
   { label: "Inscripción", to: "/form" },
-  { label: "Únete", to: "/#unete" },
 ];
 
 export const Header = () => {
@@ -85,9 +83,6 @@ export const Header = () => {
               {link.label}
             </MenuItem>
           ))}
-          <MenuItem onClick={() => handleMenuNavigate("/login")}>
-            Iniciar sesión
-          </MenuItem>
         </Menu>
         <HeaderTypography
           variant="h6"
@@ -108,14 +103,6 @@ export const Header = () => {
             </HeaderNavLink>
           ))}
         </HeaderNavLinksWrapper>
-        <HeaderIconButton
-          color="inherit"
-          sx={{ ml: 1 }}
-          aria-label="Iniciar sesión"
-          onClick={() => navigate("/login")}
-        >
-          <AccountCircleIcon />
-        </HeaderIconButton>
       </Toolbar>
     </HeaderAppBar>
   );
