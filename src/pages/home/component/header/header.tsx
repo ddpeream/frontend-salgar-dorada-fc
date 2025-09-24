@@ -14,6 +14,7 @@ import {
 const NAV_LINKS = [
   { label: "Inicio", to: "/", end: true },
   { label: "Plantilla", to: "/players" },
+  { label: "Partidos", to: "/matches" },
   { label: "Inscripción", to: "/form" },
 ];
 
