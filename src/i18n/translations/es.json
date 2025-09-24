@@ -118,6 +118,7 @@
     "documentNumber": "Número de Documento",
     "emergencyContact": "Contacto de Emergencia",
     "back": "Volver",
+    "totalPlayersLabel": "jugador",
     "pageEyebrow": "Plantilla 2025 · Salgar Dorada FC",
     "pageTitle": "Talento que vibra con cada minuto de juego.",
     "pageSubtitle": "Descubre a los protagonistas de nuestro club: jóvenes que combinan disciplina, energía y una visión ofensiva que contagia a la hinchada.",
@@ -292,10 +293,13 @@
     "other": "Otro"
   },
   "positions": {
-    "goalkeeper": "Portero",
-    "defender": "Defensor",
-    "midfielder": "Centrocampista",
-    "forward": "Delantero"
+    "Delantero": "Delantero",
+    "Defensa": "Defensa",
+    "Arquero": "Arquero",
+    "Volante": "Volante",
+    "Extremo": "Extremo",
+    "Mediapunta": "Mediapunta",
+    "Director Técnico": "Director Técnico"
   },
   "footer": {
     "allRightsReserved": "Todos los derechos reservados",

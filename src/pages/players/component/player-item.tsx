@@ -122,7 +122,11 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
           <PlayerName>
             {player.nombre} {player.apellido}
           </PlayerName>
-          {player.tipo && <PlayerBadge>{player.tipo}</PlayerBadge>}
+          {player.tipo && (
+            <PlayerBadge>
+              {t(`positions.${player.tipo}`, player.tipo)}
+            </PlayerBadge>
+          )}
         </PlayerHeading>
       </CardTop>
 
@@ -151,7 +155,11 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
           whileHover="hover"
           whileTap="tap"
         >
-          <span>{expanded ? t("players.profileLabels.disguise", "Ocultar") : t("players.profileLabels.See details", "Ver detalles")}</span>
+          <span>
+            {expanded
+              ? t("players.profileLabels.disguise", "Ocultar")
+              : t("players.profileLabels.See details", "Ver detalles")}
+          </span>
           <DetailIcon aria-hidden>{expanded ? "−" : "+"}</DetailIcon>
         </DetailButton>
       </CardFooter>
@@ -167,15 +175,21 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
           >
             <DetailsGrid>
               <DetailColumn>
-                <DetailLabel>{t("players.profileLabels.birthDate", "Fecha de nacimiento")}</DetailLabel>
+                <DetailLabel>
+                  {t("players.profileLabels.birthDate", "Fecha de nacimiento")}
+                </DetailLabel>
                 <DetailValue>{formattedBirth}</DetailValue>
               </DetailColumn>
               <DetailColumn>
-                <DetailLabel>{t("players.profileLabels.phone", "Teléfono")}</DetailLabel>
+                <DetailLabel>
+                  {t("players.profileLabels.phone", "Teléfono")}
+                </DetailLabel>
                 <DetailValue>{player.telefono ?? "Sin registro"}</DetailValue>
               </DetailColumn>
               <DetailColumn>
-                <DetailLabel>{t("players.profileLabels.nickname", "Identificador")}</DetailLabel>
+                <DetailLabel>
+                  {t("players.profileLabels.nickname", "Identificador")}
+                </DetailLabel>
                 <DetailValue>{player._id?.slice(0, 8) ?? "N/A"}</DetailValue>
               </DetailColumn>
             </DetailsGrid>

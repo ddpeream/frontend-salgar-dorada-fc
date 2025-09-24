@@ -297,10 +297,13 @@ export type TranslationKeys = {
     other: string;
   };
   positions: {
-    goalkeeper: string;
-    defender: string;
-    midfielder: string;
-    forward: string;
+    Forward: string;
+    Defender: string;
+    Goalkeeper: string;
+    Midfielder: string;
+    Winger: string;
+    attackingMidfielder: string;
+    headCoach: string;
   };
   footer: {
     allRightsReserved: string;

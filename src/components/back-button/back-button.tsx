@@ -2,6 +2,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { ReactNode, useCallback } from "react";
 import { BackButtonWrapper, StyledBackButton } from "./back-button.styled";
+import { useAppTranslation } from "../../i18n/hooks";
 
 interface BackButtonProps {
   fallbackPath?: string;
@@ -17,6 +18,7 @@ export const BackButton = ({
   className,
 }: BackButtonProps) => {
   const navigate = useNavigate();
+  const { t } = useAppTranslation();
 
   const handleClick = useCallback(() => {
     if (window.history.length > 2) {
@@ -34,7 +36,7 @@ export const BackButton = ({
         startIcon={icon ?? <ArrowBackIcon />}
         onClick={handleClick}
       >
-        {label}
+        {t("common.back", { defaultValue: label })}
       </StyledBackButton>
     </BackButtonWrapper>
   );

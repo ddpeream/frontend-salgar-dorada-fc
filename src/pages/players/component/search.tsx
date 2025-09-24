@@ -13,14 +13,8 @@ export const Search: React.FC<SearchProps> = ({
 }) => {
   const { t } = useAppTranslation();
 
-  const placeholder = t(
-    "players.search.placeholder",
-    "Buscar jugador por nombre o dorsal"
-  );
-  const ariaLabel = t(
-    "players.search.ariaLabel",
-    "Buscar jugador por nombre o número"
-  );
+  const placeholder = t("players.searchPlaceholder");
+  const ariaLabel = t("players.searchAriaLabel");
 
   return (
     <SearchWrapper

@@ -118,6 +118,7 @@
     "documentNumber": "Document Number",
     "emergencyContact": "Emergency Contact",
     "back": "Back",
+    "totalPlayersLabel": "player",
     "pageEyebrow": "2025 Squad · Salgar Dorada FC",
     "pageTitle": "Talent that vibrates with every minute of play.",
     "pageSubtitle": "Discover the protagonists of our club: young players who combine discipline, energy and an offensive vision that inspires the fans.",
@@ -292,10 +293,13 @@
     "other": "Other"
   },
   "positions": {
-    "goalkeeper": "Goalkeeper",
-    "defender": "Defender",
-    "midfielder": "Midfielder",
-    "forward": "Forward"
+    "Delantero": "Forward",
+    "Defensa": "Defender",
+    "Arquero": "Goalkeeper",
+    "Volante": "Midfielder",
+    "Extremo": "Winger",
+    "Mediapunta": "Attacking Midfielder",
+    "Director Técnico": "Head Coach"
   },
   "footer": {
     "allRightsReserved": "All rights reserved",

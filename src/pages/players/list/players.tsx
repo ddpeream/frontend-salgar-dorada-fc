@@ -179,13 +179,13 @@ const PlayerList: React.FC = () => {
     });
   }, [normalizedSearch]);
 
-  const totalPlayersLabel = `${filteredPlayers.length} jugador${
+  const totalPlayersLabel = `${filteredPlayers.length} ${t("players.totalPlayersLabel", "jugador")}${
     filteredPlayers.length === 1 ? "" : "es"
   }`;
 
   const filterHint = normalizedSearch
-    ? `Coincidencias con “${searchText.trim()}”`
-    : "Explora toda la plantilla";
+    ? t('players.searchMatches', { query: searchText.trim() })
+    : t("players.exploreAll", "Explora toda la plantilla");
 
   return (
     <PlayersWrapper ref={wrapperRef}>
