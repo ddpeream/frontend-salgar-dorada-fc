@@ -20,20 +20,13 @@ export const useAppTranslation = () => {
     return AVAILABLE_LANGUAGES.find(lang => lang.code === currentLanguage) || AVAILABLE_LANGUAGES[0];
   };
 
-  // Función de traducción con tipado mejorado
-  const translate = (key: string, options?: any) => {
-    return t(key, options);
-  };
-
   return {
-    t: translate,
+    t,
     changeLanguage,
     currentLanguage,
     getCurrentLanguageInfo,
     availableLanguages: AVAILABLE_LANGUAGES,
-    isLanguageSupported: (lang: string): lang is Language => {
-      return AVAILABLE_LANGUAGES.some(availableLang => availableLang.code === lang);
-    },
+    isLoading: false,
   };
 };
 
