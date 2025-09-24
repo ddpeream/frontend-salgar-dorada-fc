@@ -5,6 +5,6 @@ export interface FormState {
   celular: string;
   tipo: string;
   No: string;
-  fecha_nacimiento: Date;
+  fecha_nacimiento: string;
   direccion: string;
 }
