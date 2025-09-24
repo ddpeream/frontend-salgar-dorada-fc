@@ -17,4 +17,6 @@ export  interface formCreatedDto {
     telefono?: string;
   
     celular: string;
+
+    avatarUrl?: string;
 }
