@@ -187,8 +187,7 @@
     "no": "No",
     "all": "All",
     "none": "None",
-    "selectOption": "Select option",
-    "example": "Translation Example"
+    "selectOption": "Select option"
   },
   "documentTypes": {
     "cc": "Citizenship Card",

@@ -187,8 +187,7 @@
     "no": "No",
     "all": "Todos",
     "none": "Ninguno",
-    "selectOption": "Seleccionar opción",
-    "example": "Ejemplo de Traducción"
+    "selectOption": "Seleccionar opción"
   },
   "documentTypes": {
     "cc": "Cédula de Ciudadanía",

@@ -198,7 +198,6 @@ export type TranslationKeys = {
     all: string;
     none: string;
     selectOption: string;
-    example: string;
   };
   documentTypes: {
     cc: string;
