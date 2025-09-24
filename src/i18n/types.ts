@@ -153,6 +153,36 @@ export type TranslationKeys = {
     points: string;
     upcoming: string;
     completed: string;
+    pageEyebrow: string;
+    pageTitle: string;
+    pageSubtitle: string;
+    selectTournament: string;
+    tabs: {
+      history: string;
+      calendar: string;
+      table: string;
+    };
+    sections: {
+      lastMatches: string;
+      lastMatchesDescription: string;
+      upcomingMatches: string;
+      upcomingMatchesDescription: string;
+      standings: string;
+      standingsDescription: string;
+    };
+    status: {
+      finished: string;
+      scheduled: string;
+      live: string;
+      suspended: string;
+      unknown: string;
+    };
+    stats: {
+      points: string;
+      position: string;
+      difference: string;
+      goalsFor: string;
+    };
   };
   form: {
     title: string;

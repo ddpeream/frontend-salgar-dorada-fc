@@ -142,7 +142,37 @@
     "goalDifference": "DG",
     "points": "Pts",
     "upcoming": "Próximos",
-    "completed": "Finalizados"
+    "completed": "Finalizados",
+    "pageEyebrow": "Temporada 2025 · Torneo Regional",
+    "pageTitle": "Partidos y competición",
+    "pageSubtitle": "Sigue de cerca cada partido, resultado y la evolución del Salgar Dorada FC en el torneo regional.",
+    "selectTournament": "Seleccionar torneo:",
+    "tabs": {
+      "history": "Historial",
+      "calendar": "Calendario",
+      "table": "Tabla"
+    },
+    "sections": {
+      "lastMatches": "Últimos partidos",
+      "lastMatchesDescription": "Revive los momentos más emocionantes de nuestros encuentros recientes.",
+      "upcomingMatches": "Próximos encuentros", 
+      "upcomingMatchesDescription": "Mantente al día con los próximos desafíos del Salgar Dorada FC.",
+      "standings": "Tabla de posiciones",
+      "standingsDescription": "Posición actual en {{tournament}} {{year}}."
+    },
+    "status": {
+      "finished": "Finalizado",
+      "scheduled": "Programado",
+      "live": "En vivo",
+      "suspended": "Suspendido",
+      "unknown": "Desconocido"
+    },
+    "stats": {
+      "points": "Puntos",
+      "position": "Posición",
+      "difference": "Diferencia",
+      "goalsFor": "Goles a favor"
+    }
   },
   "form": {
     "title": "Registro de Jugador",

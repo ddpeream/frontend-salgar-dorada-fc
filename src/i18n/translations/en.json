@@ -142,7 +142,37 @@
     "goalDifference": "GD",
     "points": "Pts",
     "upcoming": "Upcoming",
-    "completed": "Completed"
+    "completed": "Completed",
+    "pageEyebrow": "2025 Season · Regional Tournament",
+    "pageTitle": "Matches and Competition",
+    "pageSubtitle": "Follow closely every match, result and the evolution of Salgar Dorada FC in the regional tournament.",
+    "selectTournament": "Select tournament:",
+    "tabs": {
+      "history": "History",
+      "calendar": "Calendar",
+      "table": "Table"
+    },
+    "sections": {
+      "lastMatches": "Recent matches",
+      "lastMatchesDescription": "Relive the most exciting moments from our recent encounters.",
+      "upcomingMatches": "Upcoming matches", 
+      "upcomingMatchesDescription": "Stay up to date with Salgar Dorada FC's upcoming challenges.",
+      "standings": "League table",
+      "standingsDescription": "Current position in {{tournament}} {{year}}."
+    },
+    "status": {
+      "finished": "Finished",
+      "scheduled": "Scheduled",
+      "live": "Live",
+      "suspended": "Suspended",
+      "unknown": "Unknown"
+    },
+    "stats": {
+      "points": "Points",
+      "position": "Position",
+      "difference": "Difference",
+      "goalsFor": "Goals for"
+    }
   },
   "form": {
     "title": "Player Registration",

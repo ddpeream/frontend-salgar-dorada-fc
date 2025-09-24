@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useAppTranslation } from "../../i18n/hooks";
 import {
   MatchesWrapper,
   BackdropGlow,
@@ -199,13 +200,8 @@ const tournamentTables: Record<string, TableTeam[]> = {
   ],
 };
 
-const tabs = [
-  { id: "historial" as const, label: "Historial", icon: "📊" },
-  { id: "calendario" as const, label: "Calendario", icon: "📅" },
-  { id: "tabla" as const, label: "Tabla", icon: "🏆" },
-];
-
 export const Matches: React.FC = () => {
+  const { t } = useAppTranslation();
   const [activeTab, setActiveTab] = useState<TabType>("historial");
   const [selectedTournament, setSelectedTournament] = useState<string>("corporacion-punto-coma-2025");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 8, width: 110 });
@@ -215,6 +211,12 @@ export const Matches: React.FC = () => {
   const filteredHistoryMatches = matchesHistory.filter(match => match.tournamentId === selectedTournament);
   const filteredUpcomingMatches = upcomingMatches.filter(match => match.tournamentId === selectedTournament);
   const currentTable = tournamentTables[selectedTournament] || [];
+
+  const tabs = [
+    { id: "historial" as const, label: t('matches.tabs.history'), icon: "📊" },
+    { id: "calendario" as const, label: t('matches.tabs.calendar'), icon: "📅" },
+    { id: "tabla" as const, label: t('matches.tabs.table'), icon: "🏆" },
+  ];
 
   // Actualizar posición del indicador cuando cambia el tab activo
   useEffect(() => {
@@ -251,11 +253,11 @@ export const Matches: React.FC = () => {
 
   const getStatusLabel = (status: Match["status"]) => {
     switch (status) {
-      case "finalizado": return "Finalizado";
-      case "programado": return "Programado";
-      case "en_vivo": return "En vivo";
-      case "suspendido": return "Suspendido";
-      default: return "Desconocido";
+      case "finalizado": return t('matches.status.finished');
+      case "programado": return t('matches.status.scheduled');
+      case "en_vivo": return t('matches.status.live');
+      case "suspendido": return t('matches.status.suspended');
+      default: return t('matches.status.unknown');
     }
   };
 
@@ -310,9 +312,9 @@ export const Matches: React.FC = () => {
           <SectionContainer>
             <SectionCard>
               <SectionHeader>
-                <SectionTitle>Últimos partidos</SectionTitle>
+                <SectionTitle>{t('matches.sections.lastMatches')}</SectionTitle>
                 <SectionDescription>
-                  Revive los momentos más emocionantes de nuestros encuentros recientes.
+                  {t('matches.sections.lastMatchesDescription')}
                 </SectionDescription>
               </SectionHeader>
               {filteredHistoryMatches.map(renderMatch)}
@@ -325,9 +327,9 @@ export const Matches: React.FC = () => {
           <SectionContainer>
             <SectionCard>
               <SectionHeader>
-                <SectionTitle>Próximos encuentros</SectionTitle>
+                <SectionTitle>{t('matches.sections.upcomingMatches')}</SectionTitle>
                 <SectionDescription>
-                  Mantente al día con los próximos desafíos del Salgar Dorada FC.
+                  {t('matches.sections.upcomingMatchesDescription')}
                 </SectionDescription>
               </SectionHeader>
               {filteredUpcomingMatches.map(renderMatch)}
@@ -340,23 +342,26 @@ export const Matches: React.FC = () => {
           <SectionContainer>
             <SectionCard>
               <SectionHeader>
-                <SectionTitle>Tabla de posiciones</SectionTitle>
+                <SectionTitle>{t('matches.sections.standings')}</SectionTitle>
                 <SectionDescription>
-                  Posición actual en {currentTournament?.name} {currentTournament?.year}.
+                  {t('matches.sections.standingsDescription', { 
+                    tournament: currentTournament?.name, 
+                    year: currentTournament?.year 
+                  })}
                 </SectionDescription>
               </SectionHeader>
               <TableContainer>
                 <TableHeader>
-                  <TableCell>Pos</TableCell>
-                  <TableCell>Equipo</TableCell>
-                  <TableCell>PJ</TableCell>
-                  <TableCell>G</TableCell>
-                  <TableCell>E</TableCell>
-                  <TableCell>P</TableCell>
-                  <TableCell>GF</TableCell>
-                  <TableCell>GC</TableCell>
-                  <TableCell>DG</TableCell>
-                  <TableCell>Pts</TableCell>
+                  <TableCell>{t('matches.position')}</TableCell>
+                  <TableCell>{t('matches.team')}</TableCell>
+                  <TableCell>{t('matches.played')}</TableCell>
+                  <TableCell>{t('matches.won')}</TableCell>
+                  <TableCell>{t('matches.drawn')}</TableCell>
+                  <TableCell>{t('matches.lost')}</TableCell>
+                  <TableCell>{t('matches.goalsFor')}</TableCell>
+                  <TableCell>{t('matches.goalsAgainst')}</TableCell>
+                  <TableCell>{t('matches.goalDifference')}</TableCell>
+                  <TableCell>{t('matches.points')}</TableCell>
                 </TableHeader>
                 {currentTable.map((team: TableTeam) => (
                   <TableRow
@@ -391,19 +396,19 @@ export const Matches: React.FC = () => {
               <StatsGrid>
                 <StatItem>
                   <StatValue>23</StatValue>
-                  <StatLabel>Puntos</StatLabel>
+                  <StatLabel>{t('matches.stats.points')}</StatLabel>
                 </StatItem>
                 <StatItem>
                   <StatValue>3°</StatValue>
-                  <StatLabel>Posición</StatLabel>
+                  <StatLabel>{t('matches.stats.position')}</StatLabel>
                 </StatItem>
                 <StatItem>
                   <StatValue>+9</StatValue>
-                  <StatLabel>Diferencia</StatLabel>
+                  <StatLabel>{t('matches.stats.difference')}</StatLabel>
                 </StatItem>
                 <StatItem>
                   <StatValue>18</StatValue>
-                  <StatLabel>Goles a favor</StatLabel>
+                  <StatLabel>{t('matches.stats.goalsFor')}</StatLabel>
                 </StatItem>
               </StatsGrid>
             </SectionCard>
@@ -433,14 +438,14 @@ export const Matches: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <BackButton fallbackPath="/" />
-          <PageEyebrow>Temporada 2025 · Torneo Regional</PageEyebrow>
-          <PageTitle>Partidos y competición</PageTitle>
+          <PageEyebrow>{t('matches.pageEyebrow')}</PageEyebrow>
+          <PageTitle>{t('matches.pageTitle')}</PageTitle>
           <PageSubtitle>
-            Sigue de cerca cada partido, resultado y la evolución del Salgar Dorada FC en el torneo regional.
+            {t('matches.pageSubtitle')}
           </PageSubtitle>
           
           <TournamentSelector>
-            <label htmlFor="tournament-select">Seleccionar torneo:</label>
+            <label htmlFor="tournament-select">{t('matches.selectTournament')}</label>
             <select 
               id="tournament-select"
               value={selectedTournament} 
