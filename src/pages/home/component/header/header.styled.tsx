@@ -5,8 +5,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export const HeaderAppBar = styled(AppBar)`
   background-color: #acd9b2;
+  position: sticky;
   top: 0;
-  z-index: 1200;
+  z-index: 1100;
 `;
 
 export const HeaderIconButton = styled(IconButton)`
