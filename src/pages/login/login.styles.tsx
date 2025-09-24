@@ -70,10 +70,10 @@ export const Input = styled.input`
 `;
 
 export const SendBoton = styled.input`
-  background-color: #acd9b2;
+  background-color: #3A3A73;
   border-radius: 8px;
   border: none;
-  color: #ffffff;
+  color: #acd9b2;
   width: 100%;
   cursor: pointer;
   font-size: 16px;
@@ -84,7 +84,7 @@ export const SendBoton = styled.input`
 `;
 
 export const SingUpButton = styled.button`
-  background-color: #ffffff;
+  background-color: #3A3A73;
   border-radius: 8px;
   border: 1px solid #acd9b2;
   color: #acd9b2;

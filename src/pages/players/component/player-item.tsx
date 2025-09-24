@@ -6,9 +6,13 @@ import {
   PlayerName,
   PlayerInfo,
 } from "../list/players.styled";
+import { formCreatedDto } from "../../../service/players/player.interfase";
 
-const PlayerItem = (props: any) => {
-    const { player } = props
+interface PlayerItemProps {
+  player: formCreatedDto;
+}
+
+const PlayerItem: React.FC<PlayerItemProps> = ({ player }) => {
   return (
     <PlayerGrid key={player._id} item xs={12}>
       <PlayerLink to={`/players/${player._id}`} state={{ _id: player._id }}>

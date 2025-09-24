@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const PlayersContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   & > div {
     width: 100%;
@@ -50,6 +50,10 @@ export const PlayersContainer = styled.div`
       margin: 0;
     }
   }
+`;
+
+export const PlayersContent = styled.div`
+  width: 100%;
 `;
 
 export const SearchContainer = styled(Grid)`
