@@ -6,7 +6,7 @@ interface I18nContextType {
   currentLanguage: Language;
   changeLanguage: (language: Language) => void;
   availableLanguages: typeof AVAILABLE_LANGUAGES;
-  t: (key: string, options?: any) => string;
+  t: any;
   isLoading: boolean;
 }
 
