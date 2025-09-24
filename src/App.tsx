@@ -5,16 +5,19 @@ import { FormPlayer } from './pages/form/form';
 import { Login } from './pages/login/login';
 import PlayerProfile from './pages/players/profile/player-profile';
 import PlayerList from './pages/players/list/players';
+import AppLayout from './components/layout';
 
 function App() {
   return (
     <BrowserRouter basename="/frontend-salgar-dorada-fc">
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/players" element={<PlayerList />} />
-        <Route path="/players/:id" element={<PlayerProfile />} />
-        <Route path="/form" element={<ProtectedRoute component={FormPlayer} />} />
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/players" element={<PlayerList />} />
+          <Route path="/players/:id" element={<PlayerProfile />} />
+          <Route path="/form" element={<ProtectedRoute component={FormPlayer} />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

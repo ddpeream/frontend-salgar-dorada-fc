@@ -61,7 +61,7 @@ export const Header = () => {
   };
 
   return (
-    <HeaderAppBar position="static">
+    <HeaderAppBar position="sticky">
       <Toolbar>
         <HeaderIconButton
           edge="start"
