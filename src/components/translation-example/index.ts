@@ -1,0 +1,1 @@
+export { TranslationExample } from './translation-example';

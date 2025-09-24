@@ -13,32 +13,35 @@ import {
   FooterDivider,
   FooterCredit,
 } from "./footer.styled";
+import { useAppTranslation } from "../../../../i18n/hooks";
 import escudo from "../../../../assets/escudo-sd.jpg";
 
 export const Footer = () => {
+  const { t } = useAppTranslation();
+
   return (
     <FooterContainer>
       <FooterContent>
         <FooterBrand>
           <FooterBadge src={escudo} alt="Escudo Salgar Dorada FC" />
           <FooterMeta>
-            <FooterClub>Salgar Dorada FC</FooterClub>
-            <FooterSlogan>Pasi&oacute;n dorada que ilumina el Magdalena Medio.</FooterSlogan>
+            <FooterClub>{t('home.title')}</FooterClub>
+            <FooterSlogan>{t('footer.slogan')}</FooterSlogan>
           </FooterMeta>
         </FooterBrand>
 
         <FooterInfo>
           <InfoItem>
             <InfoIcon aria-hidden>📍</InfoIcon>
-            <InfoText>Medellín &nbsp;•&nbsp; Unidad Deportiva de Belén</InfoText>
+            <InfoText>{t('footer.location')}</InfoText>
           </InfoItem>
           <InfoItem>
             <InfoIcon aria-hidden>📞</InfoIcon>
-            <InfoText>+57 604 555 2200 &nbsp;|&nbsp; contacto@salgar-dorada-fc.com</InfoText>
+            <InfoText>{t('footer.contact')}</InfoText>
           </InfoItem>
           <InfoItem>
             <InfoIcon aria-hidden>🏟️</InfoIcon>
-            <InfoText>Entrenamientos martes y jueves · 8:00 p.m. - 10:00 p.m.</InfoText>
+            <InfoText>{t('footer.training')}</InfoText>
           </InfoItem>
         </FooterInfo>
       </FooterContent>
@@ -46,7 +49,7 @@ export const Footer = () => {
       <FooterDivider aria-hidden />
 
       <FooterCredit>
-        © {new Date().getFullYear()} Salgar Dorada FC — Comunidad, talento y compromiso.
+        © {new Date().getFullYear()} {t('home.title')} — {t('footer.community')}
       </FooterCredit>
     </FooterContainer>
   );

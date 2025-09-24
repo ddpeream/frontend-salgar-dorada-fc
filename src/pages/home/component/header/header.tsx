@@ -1,6 +1,8 @@
 import { MouseEvent as ReactMouseEvent, useState } from "react";
 import { Toolbar, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { LanguageSelector } from "../../../../components/language-selector";
+import { useAppTranslation } from "../../../../i18n/hooks";
 import {
   HeaderIconButton,
   HeaderAppBar,
@@ -11,16 +13,18 @@ import {
   HeaderNavLinksWrapper,
 } from "./header.styled";
 
-const NAV_LINKS = [
-  { label: "Inicio", to: "/", end: true },
-  { label: "Plantilla", to: "/players" },
-  { label: "Partidos", to: "/matches" },
-  { label: "Inscripción", to: "/form" },
-];
-
 export const Header = () => {
   const navigate = useNavigate();
+  const { t } = useAppTranslation();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+
+  // Enlaces de navegación con traducciones
+  const NAV_LINKS = [
+    { label: t('navigation.home'), to: "/", end: true },
+    { label: t('navigation.players'), to: "/players" },
+    { label: t('navigation.matches'), to: "/matches" },
+    { label: t('navigation.form'), to: "/form" },
+  ];
 
   const handleOpenNavMenu = (event: ReactMouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -77,7 +81,6 @@ export const Header = () => {
           onClose={handleCloseNavMenu}
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           transformOrigin={{ vertical: "top", horizontal: "left" }}
-          keepMounted
         >
           {NAV_LINKS.map((link) => (
             <MenuItem key={`menu-${link.to}`} onClick={() => handleMenuNavigate(link.to)}>
@@ -90,7 +93,7 @@ export const Header = () => {
           sx={{ flexGrow: 1, cursor: "pointer" }}
           onClick={() => navigate("/")}
         >
-          Salgar Dorada FC
+          {t('home.title')}
         </HeaderTypography>
         <HeaderNavLinksWrapper>
           {NAV_LINKS.map((link) => (
@@ -104,6 +107,7 @@ export const Header = () => {
             </HeaderNavLink>
           ))}
         </HeaderNavLinksWrapper>
+        <LanguageSelector position="header" />
       </Toolbar>
     </HeaderAppBar>
   );

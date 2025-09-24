@@ -19,7 +19,7 @@ export const Search: React.FC<SearchProps> = ({ searchText, setSearchText }) => 
       id="player-search"
       name="player-search"
       value={searchText}
-      onChange={(event) => setSearchText(event.target.value)}
+      onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSearchText(event.target.value)}
       placeholder="Buscar jugador por nombre o dorsal"
       autoComplete="off"
       aria-label="Buscar jugador por nombre o número"
