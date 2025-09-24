@@ -136,7 +136,9 @@
       "address": "Address:",
       "birthDate": "Birth Date:",
       "phone": "Phone:",
-      "nickname": "Nickname:"
+      "nickname": "Nickname:",
+      "disguise": "Hide",
+      "See details": "See details"
     }
   },
   "matches": {

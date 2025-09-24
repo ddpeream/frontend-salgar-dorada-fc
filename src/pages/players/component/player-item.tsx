@@ -151,7 +151,7 @@ const PlayerItem: React.FC<PlayerItemProps> = ({ player, index }) => {
           whileHover="hover"
           whileTap="tap"
         >
-          <span>{expanded ? "Ocultar" : "Ver detalles"}</span>
+          <span>{expanded ? t("players.profileLabels.disguise", "Ocultar") : t("players.profileLabels.See details", "Ver detalles")}</span>
           <DetailIcon aria-hidden>{expanded ? "−" : "+"}</DetailIcon>
         </DetailButton>
       </CardFooter>

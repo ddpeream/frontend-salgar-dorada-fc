@@ -136,7 +136,9 @@
       "address": "Dirección:",
       "birthDate": "Fecha de nacimiento:",
       "phone": "Teléfono:",
-      "nickname": "Identificador"      
+      "nickname": "Identificador",
+      "disguise": "Ocultar",
+      "See details": "Ver detalles"
     }
   },
   "matches": {
