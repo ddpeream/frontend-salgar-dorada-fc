@@ -150,14 +150,14 @@ export const TabsContainer = styled.div`
   padding: 0.5rem;
   backdrop-filter: blur(20px);
   width: fit-content;
+  margin: 0 auto;
+  gap: 0;
 `;
 
 export const TabIndicator = styled(motion.div)`
   position: absolute;
   top: 0.5rem;
-  left: 0.5rem;
   bottom: 0.5rem;
-  width: 120px;
   background: linear-gradient(135deg, ${accentPrimary}, ${accentSecondary});
   border-radius: 16px;
   z-index: 1;
@@ -168,6 +168,7 @@ export const TabButton = styled(motion.button)<{ $isActive: boolean }>`
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -178,17 +179,30 @@ export const TabButton = styled(motion.button)<{ $isActive: boolean }>`
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
+  white-space: nowrap;
   min-width: 120px;
-  justify-content: center;
+  flex-shrink: 0;
 
   color: ${({ $isActive }) => ($isActive ? "#041126" : "rgba(205, 216, 255, 0.7)")};
 
   span {
     font-size: 1.1rem;
+    display: flex;
+    align-items: center;
   }
 
   &:hover {
     color: ${({ $isActive }) => ($isActive ? "#041126" : "rgba(235, 246, 255, 0.9)")};
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+    min-width: 100px;
+    
+    span {
+      font-size: 1rem;
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
   MatchesWrapper,
@@ -208,11 +208,27 @@ const tabs = [
 export const Matches: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>("historial");
   const [selectedTournament, setSelectedTournament] = useState<string>("corporacion-punto-coma-2025");
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 8, width: 110 });
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const currentTournament = tournaments.find(t => t.id === selectedTournament);
   const filteredHistoryMatches = matchesHistory.filter(match => match.tournamentId === selectedTournament);
   const filteredUpcomingMatches = upcomingMatches.filter(match => match.tournamentId === selectedTournament);
   const currentTable = tournamentTables[selectedTournament] || [];
+
+  // Actualizar posición del indicador cuando cambia el tab activo
+  useEffect(() => {
+    const activeIndex = tabs.findIndex(t => t.id === activeTab);
+    const activeTabElement = tabRefs.current[activeIndex];
+    
+    if (activeTabElement) {
+      const containerPadding = 8;
+      setIndicatorStyle({
+        left: activeTabElement.offsetLeft - containerPadding,
+        width: activeTabElement.offsetWidth,
+      });
+    }
+  }, [activeTab]);
 
   const formatMatchDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -441,12 +457,13 @@ export const Matches: React.FC = () => {
 
         <TabsContainer>
           <TabIndicator
-            animate={{ x: tabs.findIndex(t => t.id === activeTab) * 120 }}
+            animate={indicatorStyle}
             transition={{ duration: 0.3, ease: "easeOut" }}
           />
-          {tabs.map((tab) => (
+          {tabs.map((tab, index) => (
             <TabButton
               key={tab.id}
+              ref={(el: HTMLButtonElement | null) => (tabRefs.current[index] = el)}
               $isActive={activeTab === tab.id}
               onClick={() => setActiveTab(tab.id)}
               whileHover={{ scale: 1.02 }}
