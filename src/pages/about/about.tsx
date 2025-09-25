@@ -29,6 +29,33 @@ import {
   NarrativeTag,
   NarrativeTitle,
   NarrativeText,
+  CityGrid,
+  CityStory,
+  StoryBadge,
+  StoryHeading,
+  StoryParagraph,
+  StoryFootnote,
+  CityFacts,
+  FactCard,
+  FactLabel,
+  FactValue,
+  VenueMatrix,
+  VenueCard,
+  VenueTitle,
+  VenueMeta,
+  VenueDescription,
+  CommunityGrid,
+  CommunityCard,
+  CommunityTitle,
+  CommunityMeta,
+  CommunityText,
+  ColonialHighlight,
+  ColonialTitle,
+  ColonialText,
+  ColonialNote,
+  ManifestShell,
+  ManifestTitle,
+  ManifestText,
   FounderGrid,
   FounderCard,
   FounderBadge,
@@ -158,6 +185,16 @@ const AboutPage: React.FC = () => {
         defaultValue: "Comunidad fundadora activa",
       }),
       period: "2013 – Presente",
+    },
+    {
+      name: "Leonardo Corrales",
+      badge: t("about.founders.badges.visionary", {
+        defaultValue: "Liderazgo",
+      }),
+      role: t("about.founders.roles.visionary", {
+        defaultValue: "Capitán, director técnico y administrador",
+      }),
+      period: "2014 – Presente",
     },
   ];
 
@@ -304,6 +341,153 @@ const AboutPage: React.FC = () => {
       text: t("about.achievements.cards.identity.text", {
         defaultValue:
           "Participación en Puerta de Oro de Cundinamarca y representación oficial de Puerto Salgar.",
+      }),
+    },
+  ];
+
+  const medellinStory = [
+    t("about.medellin.story.paragraphs.arrival", {
+      defaultValue:
+        "Aunque venimos de Puerto Salgar, nuestra vida futbolera se consolidó en Medellín entre 2013 y 2014, cuando una camada de salgareños empezó a encontrarse en las canchas de barrio.",
+    }),
+    t("about.medellin.story.paragraphs.community", {
+      defaultValue:
+        "Estudiantes, recién graduados y soñadores del balón formaron el parche que, con el tiempo, se consolidó como comunidad y luego como club formal.",
+    }),
+    t("about.medellin.story.paragraphs.formalization", {
+      defaultValue:
+        "A finales de 2022 dimos el salto para oficializar Salgar Dorada FC, manteniendo vivo el vínculo entre Puerto Salgar y la capital antioqueña.",
+    }),
+  ];
+
+  const medellinFacts = [
+    {
+      label: t("about.medellin.facts.identity.label", {
+        defaultValue: "Identidad",
+      }),
+      value: t("about.medellin.facts.identity.value", {
+        defaultValue:
+          "Club nacido del arraigo de Puerto Salgar pero criado en los escenarios públicos de Medellín.",
+      }),
+    },
+    {
+      label: t("about.medellin.facts.leadership.label", {
+        defaultValue: "Capitanes",
+      }),
+      value: t("about.medellin.facts.leadership.value", {
+        defaultValue:
+          "Cristian Rueda, Jeison Montealgre, Leonardo Corrales y Miguel Ángel Soto han portado el brazalete.",
+      }),
+    },
+    {
+      label: t("about.medellin.facts.ecosystem.label", {
+        defaultValue: "Ecosistema",
+      }),
+      value: t("about.medellin.facts.ecosystem.value", {
+        defaultValue:
+          "Entrenamos y competimos en Unidad Deportiva de Belén, Campoamor, Altavista y la red de escenarios de INDER Medellín.",
+      }),
+    },
+  ];
+
+  const medellinVenues = [
+    {
+      meta: t("about.medellin.venues.cards.belen.meta", {
+        defaultValue: "Belén Andrés Escobar",
+      }),
+      title: t("about.medellin.venues.cards.belen.title", {
+        defaultValue: "Unidad Deportiva de Belén",
+      }),
+      description: t("about.medellin.venues.cards.belen.description", {
+        defaultValue:
+          "Nuestra casa principal: canchas de grama natural y sintética, programación de INDER y un pulso comunitario que nunca se apaga.",
+      }),
+    },
+    {
+      meta: t("about.medellin.venues.cards.campoamor.meta", {
+        defaultValue: "Comuna 15",
+      }),
+      title: t("about.medellin.venues.cards.campoamor.title", {
+        defaultValue: "Campoamor",
+      }),
+      description: t("about.medellin.venues.cards.campoamor.description", {
+        defaultValue:
+          "Cancha tradicional de barrio donde los torneos y las retas mantienen viva la competencia popular.",
+      }),
+    },
+    {
+      meta: t("about.medellin.venues.cards.altavista.meta", {
+        defaultValue: "Altavista",
+      }),
+      title: t("about.medellin.venues.cards.altavista.title", {
+        defaultValue: "Altavista parte baja",
+      }),
+      description: t("about.medellin.venues.cards.altavista.description", {
+        defaultValue:
+          "Escenario comunitario clave donde el fútbol de base no se detiene y la colonia salgar se hace sentir.",
+      }),
+    },
+    {
+      meta: t("about.medellin.venues.cards.network.meta", {
+        defaultValue: "Red INDER",
+      }),
+      title: t("about.medellin.venues.cards.network.title", {
+        defaultValue: "Escenarios itinerantes",
+      }),
+      description: t("about.medellin.venues.cards.network.description", {
+        defaultValue:
+          "Prácticamente toda la ciudad: canchas públicas, sintéticas y de barrio renovadas para mantener la agenda competitiva.",
+      }),
+    },
+  ];
+
+  const medellinCommunity = [
+    {
+      meta: t("about.medellin.community.cards.laf.meta", {
+        defaultValue: "Liga Antioqueña",
+      }),
+      title: t("about.medellin.community.cards.laf.title", {
+        defaultValue: "Competencias federadas",
+      }),
+      description: t("about.medellin.community.cards.laf.description", {
+        defaultValue:
+          "Participamos cuando el calendario lo permite en torneos de la Liga Antioqueña de Fútbol, midiendo nuestro ADN frente a la élite departamental.",
+      }),
+    },
+    {
+      meta: t("about.medellin.community.cards.barrio.meta", {
+        defaultValue: "Barrio Antioquia",
+      }),
+      title: t("about.medellin.community.cards.barrio.title", {
+        defaultValue: "Torneos de barrio",
+      }),
+      description: t("about.medellin.community.cards.barrio.description", {
+        defaultValue:
+          "Referentes como el Torneo del Barrio muestran cómo la cultura del fútbol callejero transforma territorios y pule talento.",
+      }),
+    },
+    {
+      meta: t("about.medellin.community.cards.altavista.meta", {
+        defaultValue: "Altavista & Belén",
+      }),
+      title: t("about.medellin.community.cards.altavista.title", {
+        defaultValue: "Festivales comunitarios",
+      }),
+      description: t("about.medellin.community.cards.altavista.description", {
+        defaultValue:
+          "Una agenda encendida de campeonatos, retas y fútbol playa que mezcla show, comunidad y oportunidad.",
+      }),
+    },
+    {
+      meta: t("about.medellin.community.cards.festivals.meta", {
+        defaultValue: "Formativo",
+      }),
+      title: t("about.medellin.community.cards.festivals.title", {
+        defaultValue: "Festivales juveniles",
+      }),
+      description: t("about.medellin.community.cards.festivals.description", {
+        defaultValue:
+          "Copas como Medellín Soccer Cup atraen delegaciones nacionales e internacionales y usan la red pública de escenarios.",
       }),
     },
   ];
@@ -496,6 +680,114 @@ const AboutPage: React.FC = () => {
           <SectionForeground>
             <SectionHeader>
               <SectionEyebrow>
+                {t("about.medellin.eyebrow", { defaultValue: "Medellín" })}
+              </SectionEyebrow>
+              <SectionTitle>
+                {t("about.medellin.title", {
+                  defaultValue: "La ciudad que nos convirtió en club",
+                })}
+              </SectionTitle>
+              <SectionDescription>
+                {t("about.medellin.description", {
+                  defaultValue:
+                    "Llegamos desde Puerto Salgar y encontramos en Medellín el ecosistema perfecto para crecer: canchas públicas vibrantes, cultura de barrio y torneos que no dan tregua.",
+                })}
+              </SectionDescription>
+            </SectionHeader>
+
+            <CityGrid>
+              <CityStory variants={gentleScale}>
+                <StoryBadge>
+                  {t("about.medellin.story.badge", {
+                    defaultValue: "Historia en Medellín",
+                  })}
+                </StoryBadge>
+                <StoryHeading>
+                  {t("about.medellin.story.title", {
+                    defaultValue: "Nuestra vida alrededor del balón",
+                  })}
+                </StoryHeading>
+                {medellinStory.map((paragraph, index) => (
+                  <StoryParagraph key={index}>{paragraph}</StoryParagraph>
+                ))}
+                <StoryFootnote>
+                  {t("about.medellin.story.footnote", {
+                    defaultValue:
+                      "El núcleo inicial lo encendieron Johan Manuel Santana, Cristian Rueda, Jeison Montealgre, Juan David Garcés, Deimar Perea, Francisco, Jorge Quintero, Carlos Avendaño “Roma” y Leonardo Corrales.",
+                  })}
+                </StoryFootnote>
+              </CityStory>
+
+              <CityFacts>
+                {medellinFacts.map((fact) => (
+                  <FactCard key={fact.label} variants={gentleScale}>
+                    <FactLabel>{fact.label}</FactLabel>
+                    <FactValue>{fact.value}</FactValue>
+                  </FactCard>
+                ))}
+              </CityFacts>
+            </CityGrid>
+
+            <SectionMarker>
+              {t("about.medellin.venues.marker", {
+                defaultValue: "Canchas donde nos hicimos equipo",
+              })}
+            </SectionMarker>
+
+            <VenueMatrix as={motion.div} variants={staggered}>
+              {medellinVenues.map((venue) => (
+                <VenueCard key={venue.title} variants={gentleScale}>
+                  <VenueMeta>{venue.meta}</VenueMeta>
+                  <VenueTitle>{venue.title}</VenueTitle>
+                  <VenueDescription>{venue.description}</VenueDescription>
+                </VenueCard>
+              ))}
+            </VenueMatrix>
+
+            <GradientStroke />
+
+            <SectionMarker>
+              {t("about.medellin.community.marker", {
+                defaultValue: "Torneos, parches y cultura",
+              })}
+            </SectionMarker>
+
+            <CommunityGrid as={motion.div} variants={staggered}>
+              {medellinCommunity.map((item) => (
+                <CommunityCard key={item.title} variants={gentleScale}>
+                  <CommunityMeta>{item.meta}</CommunityMeta>
+                  <CommunityTitle>{item.title}</CommunityTitle>
+                  <CommunityText>{item.description}</CommunityText>
+                </CommunityCard>
+              ))}
+            </CommunityGrid>
+
+            <ColonialHighlight variants={gentleScale}>
+              <ColonialTitle>
+                {t("about.medellin.colonial.title", {
+                  defaultValue: "Torneo Intercolonias",
+                })}
+              </ColonialTitle>
+              <ColonialText>
+                {t("about.medellin.colonial.description", {
+                  defaultValue:
+                    "El torneo colonial de Medellín integra colonias municipales y es el espacio donde representamos a Puerto Salgar junto a equipos de toda la ciudad.",
+                })}
+              </ColonialText>
+              <ColonialNote>
+                {t("about.medellin.colonial.note", {
+                  defaultValue:
+                    "Si tienes el nombre exacto de la versión en la que participamos, lo sumamos para dejar el registro histórico completo.",
+                })}
+              </ColonialNote>
+            </ColonialHighlight>
+          </SectionForeground>
+        </SectionShell>
+
+        <SectionShell variants={fadeUp} viewport={viewport}>
+          <SectionForeground>
+            <SectionHeader>
+              <SectionEyebrow>
                 {t("about.founders.eyebrow", {
                   defaultValue: "Fundadores y comunidad",
                 })}
@@ -658,6 +950,49 @@ const AboutPage: React.FC = () => {
                 </AchievementCard>
               ))}
             </AchievementsGrid>
+          </SectionForeground>
+        </SectionShell>
+
+        <SectionShell variants={fadeUp} viewport={viewport}>
+          <SectionForeground>
+            <SectionHeader>
+              <SectionEyebrow>
+                {t("about.manifest.eyebrow", {
+                  defaultValue: "Manifiesto",
+                })}
+              </SectionEyebrow>
+              <SectionTitle>
+                {t("about.manifest.title", {
+                  defaultValue: "Creemos en el fútbol como escuela de vida",
+                })}
+              </SectionTitle>
+              <SectionDescription>
+                {t("about.manifest.description", {
+                  defaultValue:
+                    "Una declaración que honra a quienes nos trajeron hasta aquí y a quienes seguirán escribiendo la historia.",
+                })}
+              </SectionDescription>
+            </SectionHeader>
+
+            <ManifestShell variants={gentleScale}>
+              <ManifestTitle>
+                {t("about.manifest.heading", {
+                  defaultValue: "Nuestro manifiesto",
+                })}
+              </ManifestTitle>
+              <ManifestText>
+                {t("about.manifest.text", {
+                  defaultValue:
+                    "Creemos en el fútbol como ascensor social y escuela de vida. Entre estudio, trabajo y canchas de barrio aprendimos que Medellín es el lugar donde un parche de amigos puede volverse equipo y un equipo puede volverse club.",
+                })}
+              </ManifestText>
+              <ManifestText>
+                {t("about.manifest.closing", {
+                  defaultValue:
+                    "Salgar Dorada FC es la historia de un pueblo escrita en las canchas de una ciudad que vive para el fútbol. Ese legado lo honramos en cada entrenamiento, en cada torneo y en cada abrazo con la hinchada.",
+                })}
+              </ManifestText>
+            </ManifestShell>
           </SectionForeground>
         </SectionShell>
 
