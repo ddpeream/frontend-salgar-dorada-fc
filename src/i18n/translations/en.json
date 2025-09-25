@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Home",
+    "about": "About Us",
     "players": "Players",
     "matches": "Matches",
     "form": "Registration",
@@ -97,6 +98,149 @@
         "title": "Technology at the service of the team",
         "text": "GPS, biometric sensors and simulations to design optimal loads and arrive ready for every challenge."
       }
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Puerto Salgar · Magdalena Medio",
+      "title": "A story that beats with golden pride",
+      "highlight": "From a street-born passion in 2013 to a formal club in 2022. We are community, competitiveness and a football family.",
+      "subtitle": "More than a decade crafting a competitive DNA",
+      "scroll": "Scroll to discover the legacy",
+      "stats": {
+        "years": "Years of community",
+        "community": "Families involved",
+        "competitions": "Official appearances"
+      }
+    },
+    "identity": {
+      "eyebrow": "Identity",
+      "title": "A club born in the streets with a professional vision",
+      "description": "Salgar Dorada FC is forged in the neighbourhoods and grows with a professional structure: organisation, passion and belonging powering local talent.",
+      "cards": {
+        "roots": {
+          "tag": "Roots",
+          "title": "2013: the community spark",
+          "text": "Spontaneous matches, a shared ball and friends turning passion into a serious project for Puerto Salgar."
+        },
+        "structure": {
+          "tag": "Structure",
+          "title": "2022: official status and competitive DNA",
+          "text": "The club embraces methodology, official kits and strategic planning to compete in high-level tournaments."
+        },
+        "future": {
+          "tag": "Projection",
+          "title": "Future: academy, family and community",
+          "text": "An integral model that develops players, empowers local leaders and creates unforgettable experiences for the fans."
+        }
+      }
+    },
+    "founders": {
+      "eyebrow": "Founders and community",
+      "title": "The guard who ignited and sustains the dream",
+      "description": "Their names are etched into the club's history. Leaders, friends and references who opened the door to Salgar talent.",
+      "badges": {
+        "origin": "Founder",
+        "guardian": "Guardian",
+        "community": "Community"
+      },
+      "roles": {
+        "spark": "Community founder",
+        "guardian": "Co-founder and club guardian",
+        "community": "Active founding community"
+      }
+    },
+    "memorial": {
+      "eyebrow": "Memorial",
+      "title": "Eternal guard of the club",
+      "description": "We remember with gratitude those who left an indelible trace on the pitch and in the stands.",
+      "cards": {
+        "pioneers": {
+          "title": "Unforgettable pioneers",
+          "text": "Guardians of the Salgar identity who sowed discipline and camaraderie in every training session.",
+          "footnote": "Their legacy guides every club milestone."
+        },
+        "companions": {
+          "title": "Teammates who transcend",
+          "text": "Players, fans and families who are no longer with us, yet keep cheering through our collective memory.",
+          "footnote": "Puerto Salgar always honours their devotion."
+        }
+      }
+    },
+    "leadership": {
+      "eyebrow": "Captains",
+      "title": "Leadership that transcends generations",
+      "description": "Each captain became the voice of the locker room and the bridge to the community. Their legacy continues to inspire.",
+      "timeline": {
+        "foundation": {
+          "badge": "Foundational",
+          "period": "2014 – 2016",
+          "caption": "Captain who powered the first competitive identity"
+        },
+        "partner": {
+          "badge": "Co-foundational",
+          "period": "2014 – 2016",
+          "caption": "Shared leadership that strengthened brotherhood"
+        },
+        "transition": {
+          "badge": "Transition",
+          "period": "2016 – 2021",
+          "caption": "Captain who connected generations and professionalisation"
+        },
+        "present": {
+          "badge": "Present",
+          "period": "2023 – Present",
+          "caption": "Captain projecting the legacy into the future"
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "DNA",
+      "title": "Values that position us in the region",
+      "description": "Culture of commitment, neighbourhood identity and sporting excellence for each generation of footballers.",
+      "pillars": {
+        "respect": {
+          "title": "Respect",
+          "description": "Honour rivals, referees and the shirt that unites us."
+        },
+        "discipline": {
+          "title": "Discipline",
+          "description": "Competitive rigour and consistency in every process."
+        },
+        "intensity": {
+          "title": "Intensity",
+          "description": "Vibrant football that energises all of Puerto Salgar."
+        },
+        "passion": {
+          "title": "Passion",
+          "description": "Emotional strength that turns each matchday into a ritual."
+        }
+      }
+    },
+    "achievements": {
+      "eyebrow": "Participations",
+      "title": "Our competitive journey",
+      "description": "The club competes in key tournaments reinforcing Salgar identity and projecting new talent.",
+      "cards": {
+        "community": {
+          "title": "Municipal presence",
+          "text": "Municipal coliseum, Barrio Primero de Mayo and Puerto Libre as the heart of our fans."
+        },
+        "talent": {
+          "title": "Emerging talent",
+          "text": "Under-21 youth systems, lightning festivals and academies shaping new prospects."
+        },
+        "identity": {
+          "title": "Competitive identity",
+          "text": "Puerta de Oro de Cundinamarca participation and official representation of Puerto Salgar."
+        }
+      }
+    },
+    "cta": {
+      "title": "The next chapters are waiting for you",
+      "text": "Join as a player, ally or member of the stands. Every face helps Salgar Dorada FC keep shining.",
+      "primary": "Meet the squad",
+      "secondary": "Apply to the academy"
     }
   },
   "players": {
