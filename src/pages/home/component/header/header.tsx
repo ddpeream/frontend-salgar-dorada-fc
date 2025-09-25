@@ -21,6 +21,7 @@ export const Header = () => {
   // Enlaces de navegación con traducciones
   const NAV_LINKS = [
     { label: t('navigation.home'), to: "/", end: true },
+    { label: t('navigation.about'), to: "/about" },
     { label: t('navigation.players'), to: "/players" },
     { label: t('navigation.matches'), to: "/matches" },
     { label: t('navigation.form'), to: "/form" },

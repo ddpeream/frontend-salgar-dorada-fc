@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Inicio",
+    "about": "Sobre Nosotros",
     "players": "Jugadores",
     "matches": "Partidos",
     "form": "Registro",
@@ -97,6 +98,149 @@
         "title": "Tecnología al servicio del equipo",
         "text": "GPS, sensores biométricos y simulaciones para diseñar cargas óptimas y llegar listos a cada reto."
       }
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Puerto Salgar · Magdalena Medio",
+      "title": "Una historia que late con orgullo dorado",
+      "highlight": "De una pasión barrial en 2013 a un club formal en 2022. Somos comunidad, competitividad y familia futbolera.",
+      "subtitle": "Más de una década trazando un ADN competitivo",
+      "scroll": "Desliza para descubrir el legado",
+      "stats": {
+        "years": "Años de comunidad",
+        "community": "Familias vinculadas",
+        "competitions": "Participaciones oficiales"
+      }
+    },
+    "identity": {
+      "eyebrow": "Identidad",
+      "title": "Un club que nace en la calle y crece con visión",
+      "description": "Salgar Dorada FC se forja en los barrios y se proyecta con estructura profesional: organización, pasión y pertenencia al servicio del talento local.",
+      "cards": {
+        "roots": {
+          "tag": "Raíces",
+          "title": "2013: la chispa comunitaria",
+          "text": "Partidos espontáneos, balón compartido y amigos que decidieron convertir la pasión en un proyecto serio para Puerto Salgar."
+        },
+        "structure": {
+          "tag": "Estructura",
+          "title": "2022: oficialización y ADN competitivo",
+          "text": "El club adopta metodologías, uniformes oficiales y planificación deportiva para competir en torneos de jerarquía."
+        },
+        "future": {
+          "tag": "Proyección",
+          "title": "Futuro: cantera, familia y comunidad",
+          "text": "Un modelo integral que forma jugadores, potencia líderes barriales y crea experiencias inolvidables para la afición."
+        }
+      }
+    },
+    "founders": {
+      "eyebrow": "Fundadores y comunidad",
+      "title": "La guardia que encendió y sostiene el sueño",
+      "description": "Sus nombres están tatuados en la historia del club. Líderes, amigos y referentes que abrieron la puerta al talento salgareño.",
+      "badges": {
+        "origin": "Fundador",
+        "guardian": "Guardián",
+        "community": "Comunidad"
+      },
+      "roles": {
+        "spark": "Fundador de la comunidad",
+        "guardian": "Cofundador y guardián del club",
+        "community": "Comunidad fundadora activa"
+      }
+    },
+    "memorial": {
+      "eyebrow": "Memorial",
+      "title": "Guardia eterna del club",
+      "description": "Recordamos con gratitud a quienes dejaron una huella imborrable sobre la cancha y en la tribuna.",
+      "cards": {
+        "pioneers": {
+          "title": "Pioneros inolvidables",
+          "text": "Guardianes de la identidad salgareña que sembraron disciplina y camaradería en cada entrenamiento.",
+          "footnote": "Su legado guía cada objetivo del club."
+        },
+        "companions": {
+          "title": "Compañeros que trascienden",
+          "text": "Jugadores, hinchas y familias que ya no están físicamente, pero siguen alentando desde la memoria colectiva.",
+          "footnote": "Puerto Salgar nunca olvida su entrega."
+        }
+      }
+    },
+    "leadership": {
+      "eyebrow": "Capitanes",
+      "title": "Liderazgo que trasciende generaciones",
+      "description": "Cada capitán fue la voz del vestuario y el puente con la comunidad. Su legado continúa inspirando.",
+      "timeline": {
+        "foundation": {
+          "badge": "Fundacional",
+          "period": "2014 – 2016",
+          "caption": "Capitán que impulsó la primera identidad competitiva"
+        },
+        "partner": {
+          "badge": "Cofundacional",
+          "period": "2014 – 2016",
+          "caption": "El liderazgo compartido que fortaleció la hermandad"
+        },
+        "transition": {
+          "badge": "Transición",
+          "period": "2016 – 2021",
+          "caption": "Capitán que conectó generaciones y profesionalización"
+        },
+        "present": {
+          "badge": "Actual",
+          "period": "2023 – Presente",
+          "caption": "Capitán que proyecta el legado hacia el futuro"
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "ADN",
+      "title": "Valores que nos posicionan en la región",
+      "description": "Cultura de alto compromiso, identidad barrial y excelencia deportiva para cada generación de futbolistas.",
+      "pillars": {
+        "respect": {
+          "title": "Respeto",
+          "description": "Honor a rivales, árbitros y a la camiseta que nos une."
+        },
+        "discipline": {
+          "title": "Disciplina",
+          "description": "Rigor competitivo y constancia en cada proceso."
+        },
+        "intensity": {
+          "title": "Intensidad",
+          "description": "Fútbol vibrante que contagia a Puerto Salgar entero."
+        },
+        "passion": {
+          "title": "Pasión",
+          "description": "Energía emocional que convierte cada jornada en ritual."
+        }
+      }
+    },
+    "achievements": {
+      "eyebrow": "Participaciones",
+      "title": "Nuestro recorrido competitivo",
+      "description": "El club participa en torneos clave que refuerzan la identidad salgareña y proyectan nuevos talentos.",
+      "cards": {
+        "community": {
+          "title": "Presencia municipal",
+          "text": "Polideportivo Municipal, Barrio Primero de Mayo y Puerto Libre como casa de la hinchada."
+        },
+        "talent": {
+          "title": "Talento emergente",
+          "text": "Procesos juveniles Sub-21, festivales relámpago y semilleros que proyectan nuevas figuras."
+        },
+        "identity": {
+          "title": "Identidad competitiva",
+          "text": "Participación en Puerta de Oro de Cundinamarca y representación oficial de Puerto Salgar."
+        }
+      }
+    },
+    "cta": {
+      "title": "Las próximas páginas las escribes tú",
+      "text": "Súmate como jugador, aliado o desde la tribuna. Cada rostro suma para que Salgar Dorada FC siga brillando.",
+      "primary": "Conoce la plantilla",
+      "secondary": "Aplica a la cantera"
     }
   },
   "players": {

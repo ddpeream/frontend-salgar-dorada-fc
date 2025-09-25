@@ -6,6 +6,7 @@ import PlayerProfile from './pages/players/profile/player-profile';
 import PlayerList from './pages/players/list/players';
 import { Matches } from './pages/matches';
 import AppLayout from './components/layout';
+import AboutPage from './pages/about';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/players" element={<PlayerList />} />
           <Route path="/players/:id" element={<PlayerProfile />} />

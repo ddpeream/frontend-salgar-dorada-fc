@@ -11,10 +11,154 @@ export interface LanguageOption {
 export type TranslationKeys = {
   navigation: {
     home: string;
+    about: string;
     players: string;
     matches: string;
     form: string;
     login: string;
+  };
+  about: {
+    hero: {
+      badge: string;
+      title: string;
+      highlight: string;
+      subtitle: string;
+      scroll: string;
+      stats: {
+        years: string;
+        community: string;
+        competitions: string;
+      };
+    };
+    identity: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      cards: {
+        roots: {
+          tag: string;
+          title: string;
+          text: string;
+        };
+        structure: {
+          tag: string;
+          title: string;
+          text: string;
+        };
+        future: {
+          tag: string;
+          title: string;
+          text: string;
+        };
+      };
+    };
+    founders: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      badges: {
+        origin: string;
+        guardian: string;
+        community: string;
+      };
+      roles: {
+        spark: string;
+        guardian: string;
+        community: string;
+      };
+    };
+    memorial: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      cards: {
+        pioneers: {
+          title: string;
+          text: string;
+          footnote: string;
+        };
+        companions: {
+          title: string;
+          text: string;
+          footnote: string;
+        };
+      };
+    };
+    leadership: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      timeline: {
+        foundation: {
+          badge: string;
+          period: string;
+          caption: string;
+        };
+        partner: {
+          badge: string;
+          period: string;
+          caption: string;
+        };
+        transition: {
+          badge: string;
+          period: string;
+          caption: string;
+        };
+        present: {
+          badge: string;
+          period: string;
+          caption: string;
+        };
+      };
+    };
+    values: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      pillars: {
+        respect: {
+          title: string;
+          description: string;
+        };
+        discipline: {
+          title: string;
+          description: string;
+        };
+        intensity: {
+          title: string;
+          description: string;
+        };
+        passion: {
+          title: string;
+          description: string;
+        };
+      };
+    };
+    achievements: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      cards: {
+        community: {
+          title: string;
+          text: string;
+        };
+        talent: {
+          title: string;
+          text: string;
+        };
+        identity: {
+          title: string;
+          text: string;
+        };
+      };
+    };
+    cta: {
+      title: string;
+      text: string;
+      primary: string;
+      secondary: string;
+    };
   };
   auth: {
     login: string;
@@ -144,6 +288,11 @@ export type TranslationKeys = {
       number: string;
       mobile: string;
       address: string;
+      birthDate: string;
+      phone: string;
+      nickname: string;
+      disguise: string;
+      "See details": string;
     };
   };
   matches: {
@@ -297,13 +446,13 @@ export type TranslationKeys = {
     other: string;
   };
   positions: {
-    Forward: string;
-    Defender: string;
-    Goalkeeper: string;
-    Midfielder: string;
-    Winger: string;
-    attackingMidfielder: string;
-    headCoach: string;
+    Delantero: string;
+    Defensa: string;
+    Arquero: string;
+    Volante: string;
+    Extremo: string;
+    Mediapunta: string;
+    "Director Técnico": string;
   };
   footer: {
     allRightsReserved: string;
