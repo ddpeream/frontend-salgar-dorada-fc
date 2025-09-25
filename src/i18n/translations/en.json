@@ -142,12 +142,98 @@
       "badges": {
         "origin": "Founder",
         "guardian": "Guardian",
-        "community": "Community"
+        "community": "Community",
+        "visionary": "Leadership"
       },
       "roles": {
         "spark": "Community founder",
         "guardian": "Co-founder and club guardian",
-        "community": "Active founding community"
+        "community": "Active founding community",
+        "visionary": "Captain, head coach and administrator"
+      }
+    },
+    "medellin": {
+      "eyebrow": "Medellín",
+      "title": "The city that turned us into a club",
+      "description": "We arrived from Puerto Salgar and found in Medellín the perfect ecosystem: vibrant public pitches, neighbourhood culture and tournaments that never stop.",
+      "story": {
+        "badge": "Medellín story",
+        "title": "Our life around the ball",
+        "footnote": "The original spark came from Johan Manuel Santana, Cristian Rueda, Jeison Montealgre, Juan David Garcés, Deimar Perea, Francisco, Jorge Quintero, Carlos Avendaño 'Roma' and Leonardo Corrales.",
+        "paragraphs": {
+          "arrival": "Between 2013 and 2014 a football crew of Salgar natives gathered in Medellín: students, recent graduates and dreamers chasing opportunities through the game.",
+          "community": "Street matches stitched a social fabric. Sharing football, studies and work, that group evolved into an organised community.",
+          "formalization": "By late 2022 we took the leap to formalise Salgar Dorada FC, keeping the bridge alive between Puerto Salgar and the Antioquian capital."
+        }
+      },
+      "facts": {
+        "identity": {
+          "label": "Who we are",
+          "value": "A club born from Puerto Salgar roots and raised in Medellín's public facilities."
+        },
+        "leadership": {
+          "label": "Captains",
+          "value": "Cristian Rueda, Jeison Montealgre, Leonardo Corrales and Miguel Ángel Soto have worn the armband."
+        },
+        "ecosystem": {
+          "label": "Ecosystem",
+          "value": "We train and compete at Belén Sports Unit, Campoamor, Altavista and the INDER Medellín network."
+        }
+      },
+      "venues": {
+        "marker": "Pitches that forged us",
+        "cards": {
+          "belen": {
+            "meta": "Belén Andrés Escobar",
+            "title": "Belén Sports Unit",
+            "description": "Our main home: natural and synthetic grass fields, multi-sport courts and the INDER schedule that beats every day."
+          },
+          "campoamor": {
+            "meta": "District 15",
+            "title": "Campoamor",
+            "description": "A traditional neighbourhood pitch where tournaments and challenges keep the popular competition alive in the southwest."
+          },
+          "altavista": {
+            "meta": "Altavista",
+            "title": "Lower Altavista",
+            "description": "Another community hotspot where grassroots football never stops and facilities receive constant upgrades."
+          },
+          "network": {
+            "meta": "INDER Network",
+            "title": "Itinerant venues",
+            "description": "We've rolled the ball across the city: public, synthetic and neighbourhood pitches renewed to keep the competitive agenda active."
+          }
+        }
+      },
+      "community": {
+        "marker": "Tournaments, crews and culture",
+        "cards": {
+          "laf": {
+            "meta": "Antioquia FA",
+            "title": "Federated competition",
+            "description": "We face Antioquia FA tournaments whenever the calendar allows, raising our squad's competitive standard."
+          },
+          "barrio": {
+            "meta": "Barrio Antioquia",
+            "title": "Neighbourhood tournaments",
+            "description": "Icons such as Torneo del Barrio show how street football transforms territories and opens doors for talent."
+          },
+          "altavista": {
+            "meta": "Altavista & Belén",
+            "title": "Community festivals",
+            "description": "A vibrant agenda of championships, pick-up games and beach soccer that blends show, family and neighbourhood."
+          },
+          "festivals": {
+            "meta": "Development",
+            "title": "Youth cups",
+            "description": "Events like Medellín Soccer Cup gather national and international teams and use the public pitch network."
+          }
+        }
+      },
+      "colonial": {
+        "title": "Intercolonias tournament",
+        "description": "The colonial tournament unites municipal communities living in Medellín; there we represent Puerto Salgar across different urban venues.",
+        "note": "If you have the exact edition name we played, we'll gladly add it to keep the historical record complete."
       }
     },
     "memorial": {
@@ -220,21 +306,29 @@
     "achievements": {
       "eyebrow": "Participations",
       "title": "Our competitive journey",
-      "description": "The club competes in key tournaments reinforcing Salgar identity and projecting new talent.",
+      "description": "We take part in federated tournaments, neighbourhood championships and festivals that keep the Salgar Dorada DNA alive.",
       "cards": {
         "community": {
-          "title": "Municipal presence",
-          "text": "Municipal coliseum, Barrio Primero de Mayo and Puerto Libre as the heart of our fans."
+          "title": "Colonies and neighbourhoods",
+          "text": "We represent Puerto Salgar in the Intercolonias tournament and community championships that fill the stands in Medellín."
         },
         "talent": {
           "title": "Emerging talent",
-          "text": "Under-21 youth systems, lightning festivals and academies shaping new prospects."
+          "text": "Youth processes, lightning festivals and academies forged between studies, work and public pitches."
         },
         "identity": {
           "title": "Competitive identity",
-          "text": "Puerta de Oro de Cundinamarca participation and official representation of Puerto Salgar."
+          "text": "A permanent bridge between Puerto Salgar and Medellín that lets us compete with character on any stage."
         }
       }
+    },
+    "manifest": {
+      "eyebrow": "Manifesto",
+      "title": "We believe football is a life school",
+      "description": "We honour those who brought us here and those who will write the next golden chapters.",
+      "heading": "Our manifesto",
+      "text": "We believe football is a social elevator and a life school. Between studies, work and neighbourhood pitches we learned that Medellín is where a crew of friends can become a team and a team can become a club.",
+      "closing": "Salgar Dorada FC is the story of a town written on the pitches of a city that lives for football. We honour that legacy in every training session, tournament and embrace with our fans."
     },
     "cta": {
       "title": "The next chapters are waiting for you",

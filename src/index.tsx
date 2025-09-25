@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// Importar configuración de i18n
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import './i18n';
 
 const root = ReactDOM.createRoot(
@@ -12,6 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+    <SpeedInsights />
   </React.StrictMode>
 );
 

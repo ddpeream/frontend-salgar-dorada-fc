@@ -142,12 +142,98 @@
       "badges": {
         "origin": "Fundador",
         "guardian": "Guardián",
-        "community": "Comunidad"
+        "community": "Comunidad",
+        "visionary": "Liderazgo"
       },
       "roles": {
         "spark": "Fundador de la comunidad",
         "guardian": "Cofundador y guardián del club",
-        "community": "Comunidad fundadora activa"
+        "community": "Comunidad fundadora activa",
+        "visionary": "Capitán, director técnico y administrador"
+      }
+    },
+    "medellin": {
+      "eyebrow": "Medellín",
+      "title": "La ciudad que nos convirtió en club",
+      "description": "Llegamos desde Puerto Salgar y en Medellín encontramos el ecosistema perfecto: canchas públicas vibrantes, cultura de barrio y torneos que no dan tregua.",
+      "story": {
+        "badge": "Historia en Medellín",
+        "title": "Nuestra vida alrededor del balón",
+        "footnote": "El núcleo inicial lo encendieron Johan Manuel Santana, Cristian Rueda, Jeison Montealgre, Juan David Garcés, Deimar Perea, Francisco, Jorge Quintero, Carlos Avendaño 'Roma' y Leonardo Corrales.",
+        "paragraphs": {
+          "arrival": "Entre 2013 y 2014 se juntó el parche futbolero de salgareños que llegó a Medellín: estudiantes, recién graduados y soñadores del balón que buscaban futuro.",
+          "community": "Las retas en canchas de barrio fueron tejido social. Compartiendo balón, estudio y trabajo, ese grupo se transformó en comunidad organizada.",
+          "formalization": "A finales de 2022 dimos el salto para formalizar Salgar Dorada FC, manteniendo el puente vivo entre Puerto Salgar y la capital antioqueña."
+        }
+      },
+      "facts": {
+        "identity": {
+          "label": "Qué somos hoy",
+          "value": "Un club nacido del arraigo de Puerto Salgar pero criado en los escenarios públicos de Medellín."
+        },
+        "leadership": {
+          "label": "Capitanes",
+          "value": "Cristian Rueda, Jeison Montealgre, Leonardo Corrales y Miguel Ángel Soto han portado el brazalete."
+        },
+        "ecosystem": {
+          "label": "Ecosistema",
+          "value": "Entrenamos y competimos en la Unidad Deportiva de Belén, Campoamor, Altavista y la red de escenarios de INDER Medellín."
+        }
+      },
+      "venues": {
+        "marker": "Canchas donde nos hicimos equipo",
+        "cards": {
+          "belen": {
+            "meta": "Belén Andrés Escobar",
+            "title": "Unidad Deportiva de Belén",
+            "description": "Nuestra casa principal: grama natural y sintética, placas polideportivas y programación regulada por INDER que late todos los días."
+          },
+          "campoamor": {
+            "meta": "Comuna 15",
+            "title": "Campoamor",
+            "description": "Cancha tradicional de barrio donde torneos y retas mantienen viva la competencia popular del suroccidente."
+          },
+          "altavista": {
+            "meta": "Altavista",
+            "title": "Altavista parte baja",
+            "description": "Otro foco comunitario donde el fútbol de base no se detiene y los escenarios reciben mejoras constantes."
+          },
+          "network": {
+            "meta": "Red INDER",
+            "title": "Escenarios itinerantes",
+            "description": "Hemos rodado el balón por toda la ciudad: canchas públicas, sintéticas y de barrio renovadas para mantener activa la agenda competitiva."
+          }
+        }
+      },
+      "community": {
+        "marker": "Torneos, parches y cultura",
+        "cards": {
+          "laf": {
+            "meta": "Liga Antioqueña",
+            "title": "Competencias federadas",
+            "description": "Nos medimos en los torneos de la LAF cuando el calendario lo permite, elevando el nivel competitivo del plantel."
+          },
+          "barrio": {
+            "meta": "Barrio Antioquia",
+            "title": "Torneos de barrio",
+            "description": "Referentes como el Torneo del Barrio demuestran cómo la cultura callejera transforma territorios y abre oportunidades al talento."
+          },
+          "altavista": {
+            "meta": "Altavista & Belén",
+            "title": "Festivales comunitarios",
+            "description": "Agenda encendida de campeonatos, retas y fútbol playa que mezcla show, familia y barrio."
+          },
+          "festivals": {
+            "meta": "Formativo",
+            "title": "Copas juveniles",
+            "description": "Certámenes como Medellín Soccer Cup convocan delegaciones nacionales e internacionales y usan la red pública de canchas."
+          }
+        }
+      },
+      "colonial": {
+        "title": "Torneo intercolonias",
+        "description": "El torneo colonial integra equipos de colonias residentes en Medellín; allí representamos a Puerto Salgar rotando por diferentes escenarios urbanos.",
+        "note": "Si tienes el nombre exacto de la versión en la que hemos jugado, lo sumamos para dejar el registro histórico completo."
       }
     },
     "memorial": {
@@ -220,21 +306,29 @@
     "achievements": {
       "eyebrow": "Participaciones",
       "title": "Nuestro recorrido competitivo",
-      "description": "El club participa en torneos clave que refuerzan la identidad salgareña y proyectan nuevos talentos.",
+      "description": "Participamos en torneos federados, campeonatos de barrio y festivales que mantienen vivo el ADN Salgar Dorada FC.",
       "cards": {
         "community": {
-          "title": "Presencia municipal",
-          "text": "Polideportivo Municipal, Barrio Primero de Mayo y Puerto Libre como casa de la hinchada."
+          "title": "Colonias y barrio",
+          "text": "Representamos a Puerto Salgar en el Torneo Intercolonias y en campeonatos comunitarios que llenan graderías en Medellín."
         },
         "talent": {
           "title": "Talento emergente",
-          "text": "Procesos juveniles Sub-21, festivales relámpago y semilleros que proyectan nuevas figuras."
+          "text": "Procesos juveniles, festivales relámpago y semilleros formados entre estudio, trabajo y canchas públicas."
         },
         "identity": {
           "title": "Identidad competitiva",
-          "text": "Participación en Puerta de Oro de Cundinamarca y representación oficial de Puerto Salgar."
+          "text": "Un puente permanente entre Puerto Salgar y Medellín que nos permite competir con carácter en cualquier escenario."
         }
       }
+    },
+    "manifest": {
+      "eyebrow": "Manifiesto",
+      "title": "Creemos en el fútbol como escuela de vida",
+      "description": "Honramos a quienes nos trajeron hasta aquí y a quienes seguirán escribiendo la historia dorada.",
+      "heading": "Nuestro manifiesto",
+      "text": "Creemos en el fútbol como ascensor social y escuela de vida. Entre estudio, trabajo y canchitas de barrio aprendimos que Medellín es el lugar donde un parche de amigos puede volverse equipo y un equipo puede volverse club.",
+      "closing": "Salgar Dorada FC es la historia de un pueblo escrita en las canchas de una ciudad que vive para el fútbol. Ese legado lo honramos en cada entrenamiento, torneo y abrazo con la hinchada."
     },
     "cta": {
       "title": "Las próximas páginas las escribes tú",

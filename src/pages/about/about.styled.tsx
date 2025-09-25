@@ -238,6 +238,214 @@ export const NarrativeText = styled.p`
   line-height: 1.6;
 `;
 
+export const CityGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.8rem, 4vw, 3rem);
+  align-items: start;
+`;
+
+export const CityStory = styled(motion.article)`
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  border-radius: 28px;
+  background: linear-gradient(140deg, rgba(12, 22, 48, 0.82), rgba(9, 18, 38, 0.88));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 24px 50px rgba(7, 12, 30, 0.45);
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+`;
+
+export const StoryBadge = styled.span`
+  align-self: flex-start;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(56, 189, 248, 0.12);
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+`;
+
+export const StoryHeading = styled.h3`
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: -0.01em;
+`;
+
+export const StoryParagraph = styled.p`
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #cbd5f5;
+`;
+
+export const StoryFootnote = styled.span`
+  font-size: 0.88rem;
+  color: #94a3b8;
+`;
+
+export const CityFacts = styled.div`
+  display: grid;
+  gap: 1.2rem;
+`;
+
+export const FactCard = styled(motion.div)`
+  padding: 1.4rem 1.6rem;
+  border-radius: 22px;
+  background: rgba(11, 20, 40, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+`;
+
+export const FactLabel = styled.span`
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.8);
+`;
+
+export const FactValue = styled.p`
+  margin: 0;
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+`;
+
+export const VenueMatrix = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.4rem, 3.5vw, 2.4rem);
+`;
+
+export const VenueCard = styled(motion.div)`
+  padding: 1.75rem;
+  border-radius: 24px;
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  background: linear-gradient(160deg, rgba(12, 24, 52, 0.78), rgba(10, 18, 40, 0.82));
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+`;
+
+export const VenueTitle = styled.h4`
+  margin: 0;
+  font-size: 1.1rem;
+  color: #f0f9ff;
+`;
+
+export const VenueMeta = styled.span`
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #38bdf8;
+`;
+
+export const VenueDescription = styled.p`
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+  line-height: 1.6;
+`;
+
+export const CommunityGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.4rem, 3.5vw, 2.4rem);
+`;
+
+export const CommunityCard = styled(motion.div)`
+  padding: 1.6rem 1.8rem;
+  border-radius: 24px;
+  background: rgba(13, 23, 49, 0.78);
+  border: 1px solid rgba(236, 72, 153, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+`;
+
+export const CommunityTitle = styled.h4`
+  margin: 0;
+  font-size: 1.05rem;
+  color: #f8fafc;
+`;
+
+export const CommunityMeta = styled.span`
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f472b6;
+`;
+
+export const CommunityText = styled.p`
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  line-height: 1.6;
+`;
+
+export const ColonialHighlight = styled(motion.div)`
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  border-radius: 26px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.12));
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+export const ColonialTitle = styled.h3`
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: #f8fafc;
+`;
+
+export const ColonialText = styled.p`
+  margin: 0;
+  font-size: 0.98rem;
+  color: #dbeafe;
+  line-height: 1.6;
+`;
+
+export const ColonialNote = styled.span`
+  font-size: 0.82rem;
+  color: rgba(226, 232, 240, 0.75);
+`;
+
+export const ManifestShell = styled(motion.div)`
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 32px;
+  background: linear-gradient(160deg, rgba(14, 165, 233, 0.14), rgba(129, 140, 248, 0.16));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 28px 60px rgba(7, 12, 30, 0.45);
+  backdrop-filter: blur(22px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+`;
+
+export const ManifestTitle = styled.h3`
+  margin: 0;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  color: #ffffff;
+`;
+
+export const ManifestText = styled.p`
+  margin: 0;
+  font-size: 1.05rem;
+  color: #e5edff;
+  line-height: 1.8;
+`;
+
 export const FounderGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

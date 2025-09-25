@@ -60,11 +60,13 @@ export type TranslationKeys = {
         origin: string;
         guardian: string;
         community: string;
+        visionary: string;
       };
       roles: {
         spark: string;
         guardian: string;
         community: string;
+        visionary: string;
       };
     };
     memorial: {
@@ -152,6 +154,98 @@ export type TranslationKeys = {
           text: string;
         };
       };
+    };
+    medellin: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      story: {
+        badge: string;
+        title: string;
+        footnote: string;
+        paragraphs: {
+          arrival: string;
+          community: string;
+          formalization: string;
+        };
+      };
+      facts: {
+        identity: {
+          label: string;
+          value: string;
+        };
+        leadership: {
+          label: string;
+          value: string;
+        };
+        ecosystem: {
+          label: string;
+          value: string;
+        };
+      };
+      venues: {
+        marker: string;
+        cards: {
+          belen: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          campoamor: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          altavista: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          network: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+        };
+      };
+      community: {
+        marker: string;
+        cards: {
+          laf: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          barrio: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          altavista: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+          festivals: {
+            meta: string;
+            title: string;
+            description: string;
+          };
+        };
+      };
+      colonial: {
+        title: string;
+        description: string;
+        note: string;
+      };
+    };
+    manifest: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      heading: string;
+      text: string;
+      closing: string;
     };
     cta: {
       title: string;
