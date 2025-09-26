@@ -67,6 +67,7 @@ export type TranslationKeys = {
         guardian: string;
         community: string;
         visionary: string;
+        connector: string;
       };
     };
     memorial: {

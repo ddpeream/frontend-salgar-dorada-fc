@@ -137,6 +137,26 @@ const AboutPage: React.FC = () => {
       period: "2013 – 2014",
     },
     {
+      name: "Jeison Montealgre",
+      badge: t("about.founders.badges.guardian", {
+        defaultValue: "Guardián",
+      }),
+      role: t("about.founders.roles.guardian", {
+        defaultValue: "Segundo capitán y líder comunitario",
+      }),
+      period: "2013 – Presente",
+    },
+    {
+      name: "Juan Diego Rojas",
+      badge: t("about.founders.badges.community", {
+        defaultValue: "Comunidad",
+      }),
+      role: t("about.founders.roles.connector", {
+        defaultValue: "Gestor incansable de partidos y logística",
+      }),
+      period: "2013 – 2020",
+    },
+    {
       name: "Deimar Perea",
       badge: t("about.founders.badges.guardian", {
         defaultValue: "Gestor",
