@@ -148,11 +148,11 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Juan Diego Rojas",
-      badge: t("about.founders.badges.community", {
-        defaultValue: "Comunidad",
+      badge: t("about.founders.badges.origin", {
+        defaultValue: "Fundador",
       }),
       role: t("about.founders.roles.connector", {
-        defaultValue: "Gestor incansable de partidos y logística",
+        defaultValue: "Fundador y gestor incansable de partidos",
       }),
       period: "2013 – 2020",
     },
@@ -168,10 +168,10 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Francisco",
-      badge: t("about.founders.badges.community", {
-        defaultValue: "Comunidad",
+      badge: t("about.founders.badges.guardian", {
+        defaultValue: "Guardián",
       }),
-      role: t("about.founders.roles.community", {
+      role: t("about.founders.roles.guardian", {
         defaultValue: "Comunidad fundadora activa",
       }),
       period: "2013 – Presente",
@@ -184,7 +184,7 @@ const AboutPage: React.FC = () => {
       role: t("about.founders.roles.community", {
         defaultValue: "Comunidad fundadora activa",
       }),
-      period: "2013 – Presente",
+      period: "2013 – 2022",
     },
     {
       name: "Carlos Avendaño “Roma”",
@@ -204,7 +204,7 @@ const AboutPage: React.FC = () => {
       role: t("about.founders.roles.community", {
         defaultValue: "Comunidad fundadora activa",
       }),
-      period: "2013 – Presente",
+      period: "2013 – 2024",
     },
     {
       name: "Leonardo Corrales",
