@@ -112,7 +112,7 @@ _Tip_: Usa `.env.local` para tus variables locales y `.env.production` para desp
 
 ## 📬 Contacto del club
 
-- 🌐 [Sitio oficial](https://salgar-dorada-fc.vercel.app) _(placeholder)_
+- 🌐 [Sitio oficial](https://salgar-dorada-fc-fr.vercel.app/) _(placeholder)_
 - 📸 Instagram: `@salgar_dorada_fc`
 - ✉️ Email: `contacto@salgar-dorada-fc.com`
 
